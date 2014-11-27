@@ -69,12 +69,22 @@
   <ItemGroup>
     <Content Include="assets\images\1945.bmp" />
     <Content Include="assets\images\atlas.png" />
+    <Content Include="assets\images\blue.png" />
+    <Content Include="assets\images\boss.png" />
+    <Content Include="assets\images\bosslaser.png" />
+    <Content Include="assets\images\button-24843_1280.png" />
     <Content Include="assets\images\cloud.png" />
+    <Content Include="assets\images\enemy1.png" />
+    <Content Include="assets\images\enemy2.png" />
+    <Content Include="assets\images\enemy3.png" />
+    <Content Include="assets\images\enemylaser.png" />
     <Content Include="assets\images\island.png" />
     <Content Include="assets\images\loading.jpg" />
     <Content Include="assets\images\ocean.gif" />
     <Content Include="assets\images\plane.png" />
+    <Content Include="assets\images\playerlaser.png" />
     <Content Include="assets\images\sideplane.gif" />
+    <Content Include="assets\images\Space.jpg" />
     <Content Include="css\app.css" />
     <Content Include="css\normalize.css" />
     <Content Include="index.html" />

@@ -12,16 +12,13 @@
 /// <reference path="states/menu.ts" />
 /// <reference path="states/gameover.ts" />
 
-// Mail Pilot Version 11 - Added basic state machine structure - Added Button and Label classes
-// Changed online repo
-
 var stage: createjs.Stage;
 var game: createjs.Container;
 
 var ocean: objects.Ocean;
 var plane: objects.Plane;
 var island: objects.Island;
-var clouds = []; // Clouds array;
+var ships = [];
 var scoreboard: objects.Scoreboard;
 
 var collision: managers.Collision;

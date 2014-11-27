@@ -8,12 +8,11 @@
 /// <reference path="../managers/collision.ts" />
 module states {
     export function playState() {
-        ocean.update();
         island.update();
         plane.update();
 
         for (var count = 0; count < constants.CLOUD_NUM; count++) {
-            clouds[count].update();
+            ships[count].update();
         }
 
         collision.update();
@@ -44,14 +43,14 @@ module states {
 
         // Create multiple clouds
         for (var count = 0; count < constants.CLOUD_NUM; count++) {
-            clouds[count] = new objects.Cloud(stage, game);
+            ships[count] = new objects.Cloud(stage, game);
         }
 
         // Display Scoreboard
         scoreboard = new objects.Scoreboard(stage, game);
 
         // Instantiate Collision Manager
-        collision = new managers.Collision(plane, island, clouds, scoreboard);
+        collision = new managers.Collision(plane, island, ships, scoreboard);
 
         stage.addChild(game);
     }
