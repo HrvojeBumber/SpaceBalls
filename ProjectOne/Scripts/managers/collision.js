@@ -1,16 +1,14 @@
-﻿/// <reference path="../objects/cloud.ts" />
-/// <reference path="../objects/island.ts" />
-/// <reference path="../objects/plane.ts" />
+﻿/// <reference path="../objects/enemy.ts" />
+/// <reference path="../objects/player.ts" />
 /// <reference path="../objects/scoreboard.ts" />
 var managers;
 (function (managers) {
     // Collision Manager Class
     var Collision = (function () {
-        function Collision(plane, island, clouds, scoreboard) {
-            this.clouds = [];
-            this.plane = plane;
-            this.island = island;
-            this.clouds = clouds;
+        function Collision(player, island, scoreboard) {
+            this.enemies = [];
+            this.player = player;
+            this.enemies = enemies;
             this.scoreboard = scoreboard;
         }
         // Utility method - Distance calculation between two points
@@ -34,11 +32,11 @@ var managers;
         Collision.prototype.planeAndCloud = function (cloud) {
             var p1 = new createjs.Point();
             var p2 = new createjs.Point();
-            p1.x = this.plane.image.x;
-            p1.y = this.plane.image.y;
+            p1.x = this.player.image.x;
+            p1.y = this.player.image.y;
             p2.x = cloud.image.x;
             p2.y = cloud.image.y;
-            if (this.distance(p1, p2) < ((this.plane.height / 2) + (cloud.height / 2))) {
+            if (this.distance(p1, p2) < ((this.player.height / 2) + (cloud.height / 2))) {
                 createjs.Sound.play("thunder");
                 this.scoreboard.lives -= 1;
                 cloud.reset();
@@ -49,11 +47,11 @@ var managers;
         Collision.prototype.planeAndIsland = function () {
             var p1 = new createjs.Point();
             var p2 = new createjs.Point();
-            p1.x = this.plane.image.x;
-            p1.y = this.plane.image.y;
+            p1.x = this.player.image.x;
+            p1.y = this.player.image.y;
             p2.x = this.island.image.x;
             p2.y = this.island.image.y;
-            if (this.distance(p1, p2) < ((this.plane.height / 2) + (this.island.height / 2))) {
+            if (this.distance(p1, p2) < ((this.player.height / 2) + (this.island.height / 2))) {
                 createjs.Sound.play("yay");
                 this.scoreboard.score += 100;
                 this.island.reset();
@@ -63,7 +61,7 @@ var managers;
         // Utility Function to Check Collisions
         Collision.prototype.update = function () {
             for (var count = 0; count < constants.CLOUD_NUM; count++) {
-                this.planeAndCloud(this.clouds[count]);
+                this.planeAndCloud(this.enemies[count]);
             }
             this.planeAndIsland();
         };

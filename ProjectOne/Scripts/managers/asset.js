@@ -21,12 +21,11 @@
             [230, 144, 211, 69]
         ],
         "animations": {
-            "cloud": [0],
+            "enemy": [0],
             "instructionsButton": [1],
-            "island": [2],
-            "plane": [3],
-            "playButton": [4],
-            "tryAgainButton": [5]
+            "player": [2],
+            "playButton": [3],
+            "tryAgainButton": [4]
         }
     };
 

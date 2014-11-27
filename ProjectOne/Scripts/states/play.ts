@@ -1,9 +1,8 @@
 ﻿/// <reference path="../objects/button.ts" />
-/// <reference path="../objects/cloud.ts" />
-/// <reference path="../objects/island.ts" />
+/// <reference path="../objects/enemy.ts" />
 /// <reference path="../objects/label.ts" />
-/// <reference path="../objects/ocean.ts" />
-/// <reference path="../objects/plane.ts" />
+/// <reference path="../objects/space.ts" />
+/// <reference path="../objects/player.ts" />
 /// <reference path="../objects/scoreboard.ts" />
 /// <reference path="../managers/collision.ts" />
 module states {
@@ -34,23 +33,22 @@ module states {
         game = new createjs.Container();
 
         // Instantiate Game Objects
-        ocean = new objects.Ocean(stage, game);
-        island = new objects.Island(stage, game);
-        plane = new objects.Plane(stage, game);
+        space = new objects.Space(stage, game);
+        player = new objects.Player(stage, game);
 
         // Show Cursor
         stage.cursor = "none";
 
         // Create multiple clouds
         for (var count = 0; count < constants.CLOUD_NUM; count++) {
-            ships[count] = new objects.Cloud(stage, game);
+            ships[count] = new objects.Space(stage, game);
         }
 
         // Display Scoreboard
         scoreboard = new objects.Scoreboard(stage, game);
 
         // Instantiate Collision Manager
-        collision = new managers.Collision(plane, island, ships, scoreboard);
+        collision = new managers.Collision(player, ships, scoreboard);
 
         stage.addChild(game);
     }
