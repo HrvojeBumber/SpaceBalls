@@ -7,8 +7,7 @@
 /// <reference path="../managers/collision.ts" />
 module states {
     export function playState() {
-        island.update();
-        plane.update();
+        player.update();
 
         for (var count = 0; count < constants.CLOUD_NUM; count++) {
             ships[count].update();
@@ -19,7 +18,7 @@ module states {
 
         if (scoreboard.lives <= 0) {
             stage.removeChild(game);
-            plane.destroy();
+            player.destroy();
             game.removeAllChildren();
             game.removeAllEventListeners();
             currentState = constants.GAME_OVER_STATE;
