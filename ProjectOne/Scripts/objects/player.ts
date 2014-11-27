@@ -1,7 +1,7 @@
 ﻿/// <reference path="../managers/asset.ts" />
 module objects {
     // Plane Class
-    export class Plane {
+    export class Player {
         image: createjs.Sprite;
         stage: createjs.Stage;
         game: createjs.Container;

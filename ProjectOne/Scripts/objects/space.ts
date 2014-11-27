@@ -1,7 +1,7 @@
 ﻿/// <reference path="../managers/asset.ts" />
 module objects {
     // Ocean Class
-    export class Ocean {
+    export class Space {
         image: createjs.Bitmap;
         stage: createjs.Stage;
         game: createjs.Container;
