@@ -8,7 +8,7 @@
 module states {
     export function playButtonClicked(event: MouseEvent) {
         stage.removeChild(game);
-        plane.destroy();
+        player.destroy();
         game.removeAllChildren();
         game.removeAllEventListeners();
         currentState = constants.PLAY_STATE;
@@ -16,7 +16,6 @@ module states {
     }
 
     export function menuState() {
-        space.update();
         player.update();
     }
 
@@ -27,8 +26,8 @@ module states {
         game = new createjs.Container();
 
         // Instantiate Game Objects
-        ocean = new objects.Space(stage, game);
-        plane = new objects.Player(stage, game);
+        space = new objects.Space(stage, game);
+        player = new objects.Player(stage, game);
 
         // Show Cursor
         stage.cursor = "default";
