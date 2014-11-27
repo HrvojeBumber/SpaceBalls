@@ -1,33 +1,88 @@
 ﻿/// <reference path="../managers/asset.ts" />
 module objects {
-    // Plane Class
-    export class Player {
-        image: createjs.Sprite;
+    // Player Class
+    export class Player extends objects.GameObject{
         stage: createjs.Stage;
         game: createjs.Container;
         engineSound: createjs.SoundInstance;
-        width: number;
-        height: number;
+        dx: number;
         constructor(stage: createjs.Stage, game: createjs.Container) {
+            super("Player");
             this.stage = stage;
             this.game = game;
-            this.image = new createjs.Sprite(managers.Assets.atlas, "plane");
-            this.image.y = 430;
-            this.width = this.image.getBounds().width;
-            this.height = this.image.getBounds().height;
-            this.image.regX = this.width / 2;
-            this.image.regY = this.height / 2;
-            game.addChild(this.image);
-            this.engineSound = createjs.Sound.play('engine', createjs.Sound.INTERRUPT_NONE, 0, 0, -1, 1, 0);
+            this.y = 600;
+
+            this.assignControls();
+
+            game.addChild(this);
+            //this.engineSound = createjs.Sound.play('engine', createjs.Sound.INTERRUPT_NONE, 0, 0, -1, 1, 0);
         }
 
+        // Bind key actions to player events
+        private assignControls() {
+            window.onkeydown = this.onControlDown;
+            window.onkeyup = this.onControlUp;
+        }
+
+        // Switch statement to activate movement and rotation
+        private onControlDown(event: KeyboardEvent) {
+            switch (event.keyCode) {
+                case keys.A:
+                case keys.LEFT:
+                    controls.TURN_LEFT = true;
+                    break;
+                case keys.D:
+                case keys.RIGHT:
+                    controls.TURN_RIGHT = true;
+                    break;
+                case keys.SPACE:
+                    controls.LASER = true;
+                    break;
+            }
+        }
+
+        // switch statement to reset controls
+        private onControlUp(event: KeyboardEvent) {
+            switch (event.keyCode) {
+                case keys.A:
+                case keys.LEFT:
+                    controls.TURN_LEFT = false;
+                    break;
+                case keys.D:
+                case keys.RIGHT:
+                    controls.TURN_RIGHT = false;
+                    break;
+                case keys.SPACE:
+                    controls.LASER = false;
+                    break;
+            }
+        }
+
+        // Respond to player key presses
+        private controlAction() {
+            // Execute left turn
+            if (controls.TURN_LEFT) {
+                this.dx = -5;
+            }
+
+            // Execute right turn
+            if (controls.TURN_RIGHT) {
+                this.dx = 5;
+            }
+
+            // move stop
+            if ((controls.TURN_LEFT == false) && (controls.TURN_RIGHT == false)) {
+                this.dx = 0;
+            }
+        }
 
         update() {
-            this.image.x = this.stage.mouseX;
+            this.controlAction();
+            this.x += this.dx;
         }
         destroy() {
             this.engineSound.stop();
-            game.removeChild(this.image);
+            game.removeChild(this);
         }
     }
 } 

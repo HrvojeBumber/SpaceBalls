@@ -8,7 +8,6 @@
 /// <reference path="../objects/scoreboard.ts" />
 module states {
     export function gameOverState() {
-        ocean.update();
     }
 
     // Restart Game when Try Again Button is clicked

@@ -9,7 +9,6 @@
 var states;
 (function (states) {
     function gameOverState() {
-        ocean.update();
     }
     states.gameOverState = gameOverState;
 

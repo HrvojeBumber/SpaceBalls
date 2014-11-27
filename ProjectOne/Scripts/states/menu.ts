@@ -17,7 +17,6 @@ module states {
     }
 
     export function menuState() {
-        ocean.update();
         plane.update();
     }
 

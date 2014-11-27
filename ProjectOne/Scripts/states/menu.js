@@ -19,7 +19,6 @@ var states;
     states.playButtonClicked = playButtonClicked;
 
     function menuState() {
-        ocean.update();
         plane.update();
     }
     states.menuState = menuState;
