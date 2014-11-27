@@ -75,6 +75,7 @@
     <Content Include="assets\images\ocean.gif" />
     <Content Include="assets\images\plane.png" />
     <Content Include="assets\images\sideplane.gif" />
+    <Content Include="assets\images\Space.jpg" />
     <Content Include="css\app.css" />
     <Content Include="css\normalize.css" />
     <Content Include="index.html" />
