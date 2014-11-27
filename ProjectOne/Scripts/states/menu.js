@@ -1,9 +1,8 @@
 ﻿/// <reference path="../constants.ts" />
 /// <reference path="../objects/scoreboard.ts" />
-/// <reference path="../objects/plane.ts" />
-/// <reference path="../objects/ocean.ts" />
-/// <reference path="../objects/island.ts" />
-/// <reference path="../objects/cloud.ts" />
+/// <reference path="../objects/player.ts" />
+/// <reference path="../objects/space.ts" />
+/// <reference path="../objects/enemy.ts" />
 /// <reference path="../objects/button.ts" />
 /// <reference path="../objects/label.ts" />
 var states;
@@ -19,8 +18,8 @@ var states;
     states.playButtonClicked = playButtonClicked;
 
     function menuState() {
-        ocean.update();
-        plane.update();
+        space.update();
+        player.update();
     }
     states.menuState = menuState;
 
@@ -31,14 +30,14 @@ var states;
         game = new createjs.Container();
 
         // Instantiate Game Objects
-        ocean = new objects.Ocean(stage, game);
-        plane = new objects.Plane(stage, game);
+        ocean = new objects.Space(stage, game);
+        plane = new objects.Player(stage, game);
 
         // Show Cursor
         stage.cursor = "default";
 
         // Display Game Over
-        gameNameLabel = new objects.Label(stage.canvas.width / 2, 40, "MAIL PILOT");
+        gameNameLabel = new objects.Label(stage.canvas.width / 2, 40, "SPACE PIRATES");
         game.addChild(gameNameLabel);
 
         // Display Play Again Button
