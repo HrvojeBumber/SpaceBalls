@@ -76,7 +76,20 @@ module objects {
             }
         }
 
+        // Make Sure player stays on screen
+        private checkBounds() {
+            // Check Right Bounds
+            if (this.x >= 855 - (this.width * 0.5) - 10) {
+                this.x = 855 - (this.width * 0.5) - 10;
+            }
+            // Check Left Bounds
+            if (this.x <= (this.width * 0.5)+ 10) {
+                this.x = (this.width * 0.5) + 10;
+            }
+        }
+
         update() {
+            this.checkBounds();
             this.controlAction();
             this.x += this.dx;
         }
