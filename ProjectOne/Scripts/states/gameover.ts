@@ -29,7 +29,6 @@ module states {
         game = new createjs.Container();
 
         // Instantiate Game Objects
-        space = new objects.Space(stage, game);
 
         // Show Cursor
         stage.cursor = "default";

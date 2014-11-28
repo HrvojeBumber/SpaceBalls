@@ -10,8 +10,6 @@ var objects;
             this.width = this.image.getBounds().width;
             this.height = this.image.getBounds().height;
 
-            this.dy = 5;
-
             game.addChild(this.image);
         }
         Space.prototype.destroy = function () {

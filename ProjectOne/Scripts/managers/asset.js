@@ -3,7 +3,7 @@
     // Image and Sound Manifest;
     var assetManifest = [
         { id: "loading", src: "assets/images/loading.jpg" },
-        { id: "ocean", src: "assets/images/Space.jpg" },
+        { id: "space", src: "assets/images/Space.jpg" },
         { id: "engine", src: "assets/sounds/engine.ogg" },
         { id: "thunder", src: "assets/sounds/thunder.ogg" },
         { id: "yay", src: "assets/sounds/yay.ogg" }
@@ -23,9 +23,9 @@
         "animations": {
             "enemy": [0],
             "instructionsButton": [1],
-            "player": [2],
-            "playButton": [3],
-            "tryAgainButton": [4]
+            "playButton": [5],
+            "player": [3],
+            "tryAgainButton": [6]
         }
     };
 

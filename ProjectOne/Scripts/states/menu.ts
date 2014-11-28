@@ -1,8 +1,8 @@
 ﻿/// <reference path="../constants.ts" />
 /// <reference path="../objects/scoreboard.ts" />
-/// <reference path="../objects/player.ts" />
 /// <reference path="../objects/space.ts" />
 /// <reference path="../objects/enemy.ts" />
+/// <reference path="../objects/player.ts" />
 /// <reference path="../objects/button.ts" />
 /// <reference path="../objects/label.ts" />
 module states {

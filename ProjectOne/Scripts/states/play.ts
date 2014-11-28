@@ -32,7 +32,6 @@ module states {
         game = new createjs.Container();
 
         // Instantiate Game Objects
-        space = new objects.Space(stage, game);
         player = new objects.Player(stage, game);
 
         // Show Cursor
@@ -47,7 +46,7 @@ module states {
         scoreboard = new objects.Scoreboard(stage, game);
 
         // Instantiate Collision Manager
-        collision = new managers.Collision(player, ships, scoreboard);
+        //collision = new managers.Collision(player, ships, scoreboard);
 
         stage.addChild(game);
     }
