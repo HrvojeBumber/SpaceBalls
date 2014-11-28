@@ -11,7 +11,7 @@ var objects;
     var Player = (function (_super) {
         __extends(Player, _super);
         function Player(stage, game) {
-            _super.call(this, "Player");
+            _super.call(this, "blue");
             this.stage = stage;
             this.game = game;
             this.y = 600;

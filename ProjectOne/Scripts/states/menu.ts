@@ -37,9 +37,9 @@ module states {
         game.addChild(gameNameLabel);
 
         // Display Play Again Button
-        playButton = new objects.Button(stage.canvas.width / 2, 300, "playButton");
-        game.addChild(playButton);
-        playButton.addEventListener("click", playButtonClicked);
+        //playButton = new objects.Button(stage.canvas.width / 2, 300, "playButton");
+        //game.addChild(playButton);
+        //playButton.addEventListener("click", playButtonClicked);
 
         stage.addChild(game);
     }

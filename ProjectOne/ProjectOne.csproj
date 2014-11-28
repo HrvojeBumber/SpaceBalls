@@ -77,12 +77,12 @@
     <Content Include="assets\images\enemy1.png" />
     <Content Include="assets\images\enemy2.png" />
     <Content Include="assets\images\enemy3.png" />
-    <Content Include="assets\images\enemylaser.png" />
+    <Content Include="assets\images\playerlaser.png" />
     <Content Include="assets\images\island.png" />
     <Content Include="assets\images\loading.jpg" />
     <Content Include="assets\images\ocean.gif" />
     <Content Include="assets\images\plane.png" />
-    <Content Include="assets\images\playerlaser.png" />
+    <Content Include="assets\images\enemylaser.png" />
     <Content Include="assets\images\sideplane.gif" />
     <Content Include="assets\images\Space.jpg" />
     <Content Include="css\app.css" />

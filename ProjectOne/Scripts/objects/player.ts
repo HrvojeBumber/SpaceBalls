@@ -7,7 +7,7 @@ module objects {
         engineSound: createjs.SoundInstance;
         dx: number;
         constructor(stage: createjs.Stage, game: createjs.Container) {
-            super("Player");
+            super("blue");
             this.stage = stage;
             this.game = game;
             this.y = 600;

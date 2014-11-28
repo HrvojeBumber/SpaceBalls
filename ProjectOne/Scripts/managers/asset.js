@@ -13,19 +13,24 @@
     var spriteSheetData = {
         "images": ["assets/images/atlas.png"],
         "frames": [
-            [2, 2, 226, 178],
-            [230, 2, 211, 69],
-            [443, 69, 62, 63],
-            [443, 2, 65, 65],
-            [230, 73, 211, 69],
-            [230, 144, 211, 69]
+            [174, 2, 65, 70],
+            [2, 2, 170, 164],
+            [69, 168, 25, 50],
+            [174, 74, 65, 70],
+            [174, 146, 65, 70],
+            [2, 168, 65, 70],
+            [96, 168, 25, 40],
+            [123, 168, 24, 40]
         ],
         "animations": {
-            "enemy": [0],
-            "instructionsButton": [1],
-            "playButton": [5],
-            "player": [3],
-            "tryAgainButton": [6]
+            "blue": [0],
+            "boss": [1],
+            "bosslaser": [2],
+            "enemy1": [3],
+            "enemy2": [4],
+            "enemy3": [5],
+            "enemylaser": [6],
+            "playerlaser": [7]
         }
     };
 
