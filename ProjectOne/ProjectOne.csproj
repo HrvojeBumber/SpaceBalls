@@ -59,6 +59,10 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="assets\fonts\modern_lcd-7-webfont.eot" />
+    <Content Include="assets\fonts\modern_lcd-7-webfont.ttf" />
+    <Content Include="assets\fonts\modern_lcd-7-webfont.woff" />
+    <Content Include="assets\fonts\modern_lcd-7-webfont.woff2" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -67,6 +71,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="assets\fonts\modern_lcd-7-webfont.svg" />
     <Content Include="assets\images\1945.bmp" />
     <Content Include="assets\images\atlas.png" />
     <Content Include="assets\images\blue.png" />

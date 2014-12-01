@@ -7,8 +7,8 @@
 
     // Game Constants
     constants.CLOUD_NUM = 3;
-    constants.LABEL_FONT = "40px Consolas";
-    constants.LABEL_COLOUR = "#FFFF00";
+    constants.LABEL_FONT = "40px modern_lcd";
+    constants.LABEL_COLOUR = "#05CD1F";
     constants.PLANE_LIVES = 3;
 })(constants || (constants = {}));
 //# sourceMappingURL=constants.js.map
