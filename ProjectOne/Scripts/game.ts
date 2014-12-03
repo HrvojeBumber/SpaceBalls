@@ -15,6 +15,7 @@ var stage: createjs.Stage;
 var game: createjs.Container;
 
 var space: objects.Space;
+var background: createjs.Bitmap;
 var player: objects.Player;
 var ships = [];
 var scoreboard: objects.Scoreboard;

@@ -14,6 +14,7 @@ var stage;
 var game;
 
 var space;
+var background;
 var player;
 var ships = [];
 var scoreboard;

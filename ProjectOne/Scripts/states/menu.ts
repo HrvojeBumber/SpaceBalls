@@ -16,7 +16,6 @@ module states {
     }
 
     export function menuState() {
-        player.update();
     }
 
     export function menu() {
@@ -26,20 +25,21 @@ module states {
         game = new createjs.Container();
 
         // Instantiate Game Objects
-        space = new objects.Space(stage, game);
-        player = new objects.Player(stage, game);
+        background = new createjs.Bitmap(managers.Assets.loader.getResult("menu"));
+        game.addChild(background);
 
         // Show Cursor
         stage.cursor = "default";
 
-        // Display Game Over
-        gameNameLabel = new objects.Label(stage.canvas.width / 2, 40, "SPACE PIRATES");
-        game.addChild(gameNameLabel);
+        // Display Play Button
+        playButton = new objects.Button(150, 500, "play");
+        game.addChild(playButton);
+        playButton.addEventListener("click", playButtonClicked);
 
-        // Display Play Again Button
-        //playButton = new objects.Button(stage.canvas.width / 2, 300, "playButton");
-        //game.addChild(playButton);
-        //playButton.addEventListener("click", playButtonClicked);
+        // Display Play Button
+        playButton = new objects.Button(550, 500, "instructions");
+        game.addChild(playButton);
+        playButton.addEventListener("click", playButtonClicked);
 
         stage.addChild(game);
     }

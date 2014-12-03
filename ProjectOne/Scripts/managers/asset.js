@@ -4,6 +4,7 @@
     var assetManifest = [
         { id: "loading", src: "assets/images/loading.jpg" },
         { id: "space", src: "assets/images/Space.jpg" },
+        { id: "menu", src: "assets/images/spacemenu.png" },
         { id: "engine", src: "assets/sounds/engine.ogg" },
         { id: "thunder", src: "assets/sounds/thunder.ogg" },
         { id: "yay", src: "assets/sounds/yay.ogg" }
@@ -11,16 +12,19 @@
 
     // SpriteSheet Data Object
     var spriteSheetData = {
-        "images": ["assets/images/atlas.png"],
+        "images": ["assets/images/sprites.png"],
         "frames": [
-            [174, 2, 65, 70],
-            [2, 2, 170, 164],
-            [69, 168, 25, 50],
-            [174, 74, 65, 70],
-            [174, 146, 65, 70],
-            [2, 168, 65, 70],
-            [96, 168, 25, 40],
-            [123, 168, 24, 40]
+            [67, 418, 57, 67],
+            [0, 120, 170, 164],
+            [126, 460, 25, 50],
+            [67, 346, 65, 70],
+            [0, 346, 65, 70],
+            [0, 418, 65, 70],
+            [126, 418, 25, 40],
+            [0, 0, 500, 58],
+            [0, 286, 165, 58],
+            [0, 60, 408, 58],
+            [134, 346, 24, 40]
         ],
         "animations": {
             "blue": [0],
@@ -30,7 +34,10 @@
             "enemy2": [4],
             "enemy3": [5],
             "enemylaser": [6],
-            "playerlaser": [7]
+            "instructions": [7],
+            "play": [8],
+            "playagain": [9],
+            "playerlaser": [10]
         }
     };
 

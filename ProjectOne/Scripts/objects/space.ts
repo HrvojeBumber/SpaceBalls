@@ -1,6 +1,6 @@
 ﻿/// <reference path="../managers/asset.ts" />
 module objects {
-    // Ocean Class
+    // Space Class
     export class Space {
         image: createjs.Bitmap;
         stage: createjs.Stage;
@@ -10,7 +10,7 @@ module objects {
         constructor(stage: createjs.Stage, game: createjs.Container) {
             this.stage = stage;
             this.game = game;
-            this.image = new createjs.Bitmap(managers.Assets.loader.getResult("space"));
+            this.image = new createjs.Bitmap(managers.Assets.loader.getResult("menu"));
             this.width = this.image.getBounds().width;
             this.height = this.image.getBounds().height;
 
