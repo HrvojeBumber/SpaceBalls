@@ -11,6 +11,7 @@
     constants.LABEL_FONT = "40px modern_lcd";
     constants.TEXT_FONT = "25px modern_lcd";
     constants.LABEL_COLOUR = "#05CD1F";
+    constants.GAME_TEXT_COLOUR = "#CD0000";
     constants.PLANE_LIVES = 3;
 })(constants || (constants = {}));
 //# sourceMappingURL=constants.js.map

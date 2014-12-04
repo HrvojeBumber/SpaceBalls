@@ -29,7 +29,7 @@ var states;
         // Display title and instructions
         instructionTitleLabel = new objects.Label(360, 30, "Instructions");
 
-        instructionText = new createjs.Text("Control the blue ship with your the arrow keys or A and D, press space to shoot.  " + "Shoot all the enemies to complete the level.  " + "There are 3 levels.  the third level is a boss level.  " + "Avoid the enemy ships lasers, if you get hit with one you will lose a life.  " + "if you lose all 3 of your lives it's game over", constants.TEXT_FONT, constants.LABEL_COLOUR);
+        instructionText = new createjs.Text("Control the blue ship with your the arrow keys or A and D, press space to shoot." + "Shoot all the enemies to complete the level." + "There are 3 levels.The third level is a boss level." + "Avoid the enemy ships lasers,if you get hit with one you will lose a life." + "If you lose all 3 of your lives,it's game over.", constants.TEXT_FONT, constants.LABEL_COLOUR);
 
         instructionText.x = 20;
         instructionText.y = 80;
@@ -40,7 +40,7 @@ var states;
         game.addChild(instructionTitleLabel);
         game.addChild(instructionText);
 
-        labelText = new objects.gameText(125, 470, "ENEMIES PLAYER");
+        labelText = new objects.gameText(123, 470, " ENEMY  PLAYER");
         bossLabelText = new objects.gameText(675, 420, "BOSS");
 
         instructionPlayer.x = 220;
@@ -59,7 +59,7 @@ var states;
         game.addChild(bossLabelText);
 
         // Display Play Button
-        playButton = new objects.Button(400, 530, "play");
+        playButton = new objects.Button(440, 530, "play");
         game.addChild(playButton);
         playButton.addEventListener("click", states.playButtonClicked);
 

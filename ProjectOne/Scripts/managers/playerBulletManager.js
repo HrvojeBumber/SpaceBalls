@@ -63,4 +63,4 @@ var managers;
     })();
     managers.BulletManager = BulletManager;
 })(managers || (managers = {}));
-//# sourceMappingURL=playerbulletmanager.js.map
+//# sourceMappingURL=playerBulletManager.js.map
