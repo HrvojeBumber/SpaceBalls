@@ -10,7 +10,7 @@ var objects;
     var gameText = (function (_super) {
         __extends(gameText, _super);
         function gameText(x, y, labelText) {
-            _super.call(this, labelText, constants.TEXT_FONT, constants.LABEL_COLOUR);
+            _super.call(this, labelText, constants.TEXT_FONT, constants.GAME_TEXT_COLOUR);
             this.regX = this.getBounds().width / 2;
             this.regY = this.getBounds().height / 2;
             this.x = x;

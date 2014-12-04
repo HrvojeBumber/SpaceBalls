@@ -10,5 +10,8 @@
     export var LABEL_FONT = "40px modern_lcd";
     export var TEXT_FONT = "25px modern_lcd";
     export var LABEL_COLOUR = "#05CD1F";
+    export var GAME_TEXT_COLOUR = "#CD0000";
     export var PLANE_LIVES = 3;
+   
+
 }
