@@ -28,10 +28,14 @@ module states {
 
     // play state Function
     export function play(): void {
+        var enemyX: number = 10;
+        var enemyY: number = 100;
+
         // Declare new Game Container
         game = new createjs.Container();
 
         // Instantiate Game Objects
+        space = new objects.Space(stage, game);
         player = new objects.Player(stage, game);
 
         // Show Cursor
@@ -40,6 +44,14 @@ module states {
         // Create multiple clouds
         for (var count = 0; count < constants.ENEMY_NUM; count++) {
             ships[count] = new objects.Enemy(stage, game);
+            ships[count].setX(enemyX);
+            ships[count].setY(enemyY);
+            enemyX += 80;
+
+            if (enemyX >= 840 - (ships[count].width * 0.5)) {
+                enemyX = 10;
+                enemyY += 75; 
+            }
         }
 
         // Display Scoreboard

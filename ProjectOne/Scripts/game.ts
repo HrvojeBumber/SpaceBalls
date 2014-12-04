@@ -15,6 +15,7 @@
 var stage: createjs.Stage;
 var game: createjs.Container;
 
+
 var space: objects.Space;
 var background: createjs.Bitmap;
 var player: objects.Player;
@@ -26,6 +27,8 @@ var collision: managers.Collision;
 var tryAgain: objects.Button;
 var playButton: objects.Button;
 var instructionsButton: objects.Button;
+
+var frameCount: number = 0;
 
 var currentState: number;
 var currentStateFunction;
@@ -57,6 +60,7 @@ function optimizeForMobile() {
 
 // Game Loop
 function gameLoop(event): void {
+    frameCount++;
     currentStateFunction();
     stage.update();
 }

@@ -15,6 +15,7 @@ var objects;
             this.stage = stage;
             this.game = game;
             this.y = 600;
+            this.x = stage.canvas.width * 0.5;
 
             this.assignControls();
 

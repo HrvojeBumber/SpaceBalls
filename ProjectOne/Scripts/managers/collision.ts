@@ -39,12 +39,12 @@ module managers {
             var p2: createjs.Point = new createjs.Point();
             //p1.x = this.player.image.x;
             //p1.y = this.player.image.y;
-            p2.x = cloud.image.x;
-            p2.y = cloud.image.y;
+            p2.x = cloud.x;
+            p2.y = cloud.y;
             if (this.distance(p1, p2) < ((this.player.height / 2) + (cloud.height / 2))) {
                 createjs.Sound.play("thunder");
                 this.scoreboard.lives -= 1;
-                cloud.reset();
+                //cloud.reset();
             }
         }
 

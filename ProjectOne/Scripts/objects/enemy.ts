@@ -1,24 +1,23 @@
 ﻿/// <reference path="../managers/asset.ts" />
 module objects {
-    // Cloud class
-    export class Enemy {
-        image: createjs.Sprite;
+    // Enemy class
+    export class Enemy extends GameObject{
         stage: createjs.Stage;
         game: createjs.Container;
         width: number;
         height: number;
         dx: number;
         constructor(stage: createjs.Stage, game: createjs.Container) {
+            super(this.getRandomImage())
             this.stage = stage;
             this.game = game;
-            this.image = new createjs.Sprite(managers.Assets.atlas, this.getRandomImage());
-            this.width = this.image.getBounds().width;
-            this.height = this.image.getBounds().height;
-            this.image.regX = this.width / 2;
-            this.image.regY = this.height / 2;
-            this.reset();
+            this.width = this.getBounds().width;
+            this.height = this.getBounds().height;
+            this.regX = this.width * 0.5;
+            this.regY = this.height * 0.5;
+            this.dx = -5;
 
-            game.addChild(this.image);
+            game.addChild(this);
         }
 
         private getRandomImage(): string {
@@ -28,21 +27,44 @@ module objects {
 
         }
 
+        private setX(x: number) {
+            this.x = x;
+        }
+
+        private setY(y: number) {
+            this.y = y;
+        }
+
         update() {
-            this.image.x += this.dx;
-            if (this.image.y > this.stage.canvas.height + this.height) {
-                this.reset();
+            this.checkBounds();
+            if (frameCount % 60 == 0) {
+                this.x += this.dx;
             }
         }
 
-        reset() {
-            this.image.x = Math.floor(Math.random() * this.stage.canvas.width);
-            this.dx = Math.floor(Math.random() * -3) + Math.floor(Math.random() * 3);
-            this.image.y = -this.height;
+        private checkBounds() {
+            // Check Right Bounds
+            if (this.x >= 855 - (this.width * 0.5) - 10) {
+                this.x = 855 - (this.width * 0.5) - 10;
+                for (var count = 0; count < constants.ENEMY_NUM; count++) {
+                    ships[count].dx = -5;
+                    ships[count].x -= 5;
+                    ships[count].y += 10;
+                }
+            }
+            // Check Left Bounds
+            if (this.x <= (this.width * 0.5) + 10) {
+                this.x = (this.width * 0.5) + 10;
+                for (var count = 0; count < constants.ENEMY_NUM; count++) {
+                    ships[count].dx = 5;
+                    ships[count].x += 5;
+                    ships[count].y += 10;
+                }
+            }
         }
 
         destroy() {
-            game.removeChild(this.image);
+            game.removeChild(this);
         }
     }
 

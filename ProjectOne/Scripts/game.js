@@ -26,6 +26,8 @@ var tryAgain;
 var playButton;
 var instructionsButton;
 
+var frameCount = 0;
+
 var currentState;
 var currentStateFunction;
 
@@ -56,6 +58,7 @@ function optimizeForMobile() {
 
 // Game Loop
 function gameLoop(event) {
+    frameCount++;
     currentStateFunction();
     stage.update();
 }

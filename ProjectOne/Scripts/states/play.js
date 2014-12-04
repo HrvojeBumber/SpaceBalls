@@ -30,10 +30,14 @@ var states;
 
     // play state Function
     function play() {
+        var enemyX = 10;
+        var enemyY = 100;
+
         // Declare new Game Container
         game = new createjs.Container();
 
         // Instantiate Game Objects
+        space = new objects.Space(stage, game);
         player = new objects.Player(stage, game);
 
         // Show Cursor
@@ -41,6 +45,14 @@ var states;
 
         for (var count = 0; count < constants.ENEMY_NUM; count++) {
             ships[count] = new objects.Enemy(stage, game);
+            ships[count].setX(enemyX);
+            ships[count].setY(enemyY);
+            enemyX += 80;
+
+            if (enemyX >= 840 - (ships[count].width * 0.5)) {
+                enemyX = 10;
+                enemyY += 75;
+            }
         }
 
         // Display Scoreboard
