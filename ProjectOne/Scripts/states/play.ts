@@ -46,7 +46,7 @@ module states {
         // Show Cursor
         stage.cursor = "none";
 
-        // Create multiple clouds
+        // Create multiple enemies
         for (var count = 0; count < constants.ENEMY_NUM; count++) {
             ships[count] = new objects.Enemy(stage, game);
             ships[count].setX(enemyX);
@@ -55,7 +55,7 @@ module states {
 
             if (enemyX >= 840 - (ships[count].width * 0.5)) {
                 enemyX = 10;
-                enemyY += 75; 
+                enemyY += 75;
             }
         }
 
