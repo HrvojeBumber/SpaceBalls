@@ -4,6 +4,7 @@
 /// <reference path="../objects/space.ts" />
 /// <reference path="../objects/player.ts" />
 /// <reference path="../objects/scoreboard.ts" />
+/// <reference path="../managers/playerbulletmanager.ts" />
 /// <reference path="../managers/collision.ts" />
 module states {
     export function playState() {
@@ -13,6 +14,8 @@ module states {
             ships[count].update();
         }
 
+        bulletManager.firing = controls.LASER;
+        bulletManager.update();
         //collision.update();
         scoreboard.update();
 
@@ -37,6 +40,8 @@ module states {
         // Instantiate Game Objects
         space = new objects.Space(stage, game);
         player = new objects.Player(stage, game);
+
+        bulletManager = new managers.BulletManager(player, game);
 
         // Show Cursor
         stage.cursor = "none";

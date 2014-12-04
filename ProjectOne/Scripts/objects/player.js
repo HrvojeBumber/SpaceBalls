@@ -12,6 +12,7 @@ var objects;
         __extends(Player, _super);
         function Player(stage, game) {
             _super.call(this, "blue");
+            this.onStage = true;
             this.stage = stage;
             this.game = game;
             this.y = 600;

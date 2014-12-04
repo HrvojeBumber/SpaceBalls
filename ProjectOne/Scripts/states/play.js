@@ -4,6 +4,7 @@
 /// <reference path="../objects/space.ts" />
 /// <reference path="../objects/player.ts" />
 /// <reference path="../objects/scoreboard.ts" />
+/// <reference path="../managers/playerbulletmanager.ts" />
 /// <reference path="../managers/collision.ts" />
 var states;
 (function (states) {
@@ -13,6 +14,9 @@ var states;
         for (var count = 0; count < constants.ENEMY_NUM; count++) {
             ships[count].update();
         }
+
+        bulletManager.firing = controls.LASER;
+        bulletManager.update();
 
         //collision.update();
         scoreboard.update();
@@ -39,6 +43,8 @@ var states;
         // Instantiate Game Objects
         space = new objects.Space(stage, game);
         player = new objects.Player(stage, game);
+
+        bulletManager = new managers.BulletManager(player, game);
 
         // Show Cursor
         stage.cursor = "none";

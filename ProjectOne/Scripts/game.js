@@ -21,6 +21,7 @@ var ships = [];
 var scoreboard;
 
 var collision;
+var bulletManager;
 
 var tryAgain;
 var playButton;

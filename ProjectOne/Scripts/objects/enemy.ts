@@ -58,7 +58,7 @@ module objects {
                 for (var count = 0; count < constants.ENEMY_NUM; count++) {
                     ships[count].dx = 5;
                     ships[count].x += 5;
-                    ships[count].y += 10;
+                    ships[count].y += 20;
                 }
             }
         }

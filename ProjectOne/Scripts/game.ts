@@ -23,6 +23,7 @@ var ships = [];
 var scoreboard: objects.Scoreboard;
 
 var collision: managers.Collision;
+var bulletManager: managers.BulletManager;
 
 var tryAgain: objects.Button;
 var playButton: objects.Button;

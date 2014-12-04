@@ -5,6 +5,7 @@ module objects {
         stage: createjs.Stage;
         game: createjs.Container;
         engineSound: createjs.SoundInstance;
+        onStage: boolean = true;
         dx: number;
         constructor(stage: createjs.Stage, game: createjs.Container) {
             super("blue");
