@@ -10,11 +10,11 @@ var states;
     function playState() {
         player.update();
 
-        for (var count = 0; count < constants.CLOUD_NUM; count++) {
+        for (var count = 0; count < constants.ENEMY_NUM; count++) {
             ships[count].update();
         }
 
-        collision.update();
+        //collision.update();
         scoreboard.update();
 
         if (scoreboard.lives <= 0) {
@@ -39,8 +39,8 @@ var states;
         // Show Cursor
         stage.cursor = "none";
 
-        for (var count = 0; count < constants.CLOUD_NUM; count++) {
-            ships[count] = new objects.Space(stage, game);
+        for (var count = 0; count < constants.ENEMY_NUM; count++) {
+            ships[count] = new objects.Enemy(stage, game);
         }
 
         // Display Scoreboard

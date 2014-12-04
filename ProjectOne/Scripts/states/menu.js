@@ -1,21 +1,25 @@
 ﻿/// <reference path="../constants.ts" />
-/// <reference path="../objects/scoreboard.ts" />
-/// <reference path="../objects/space.ts" />
-/// <reference path="../objects/enemy.ts" />
-/// <reference path="../objects/player.ts" />
 /// <reference path="../objects/button.ts" />
 /// <reference path="../objects/label.ts" />
 var states;
 (function (states) {
     function playButtonClicked(event) {
         stage.removeChild(game);
-        player.destroy();
         game.removeAllChildren();
         game.removeAllEventListeners();
         currentState = constants.PLAY_STATE;
         changeState(currentState);
     }
     states.playButtonClicked = playButtonClicked;
+
+    function instructionsButtonClicked(event) {
+        stage.removeChild(game);
+        game.removeAllChildren();
+        game.removeAllEventListeners();
+        currentState = constants.INSTRUCTION_STATE;
+        changeState(currentState);
+    }
+    states.instructionsButtonClicked = instructionsButtonClicked;
 
     function menuState() {
     }
@@ -39,10 +43,10 @@ var states;
         game.addChild(playButton);
         playButton.addEventListener("click", playButtonClicked);
 
-        // Display Play Button
-        playButton = new objects.Button(550, 500, "instructions");
-        game.addChild(playButton);
-        playButton.addEventListener("click", playButtonClicked);
+        // Display Instructions Button
+        instructionsButton = new objects.Button(550, 500, "instructions");
+        game.addChild(instructionsButton);
+        instructionsButton.addEventListener("click", instructionsButtonClicked);
 
         stage.addChild(game);
     }

@@ -65,7 +65,7 @@ module managers {
 
         // Utility Function to Check Collisions
         update() {
-            for (var count = 0; count < constants.CLOUD_NUM; count++) {
+            for (var count = 0; count < constants.ENEMY_NUM; count++) {
                 this.planeAndCloud(this.enemies[count]);
             }
             this.planeAndIsland();

@@ -7,6 +7,7 @@
 /// <reference path="objects/label.ts" />
 /// <reference path="objects/button.ts" />
 /// <reference path="managers/collision.ts" />
+/// <reference path="states/instructions.ts" />
 /// <reference path="states/play.ts" />
 /// <reference path="states/menu.ts" />
 /// <reference path="states/gameover.ts" />
@@ -24,6 +25,7 @@ var collision: managers.Collision;
 
 var tryAgain: objects.Button;
 var playButton: objects.Button;
+var instructionsButton: objects.Button;
 
 var currentState: number;
 var currentStateFunction;
@@ -78,6 +80,11 @@ function changeState(state: number): void {
             currentStateFunction = states.gameOverState;
             // instantiate game over screen
             states.gameOver();
+            break;
+        case constants.INSTRUCTION_STATE:
+            currentStateFunction = states.instructionState;
+            // instantiate instruction screen
+            states.instructions();
             break;
     }
 }

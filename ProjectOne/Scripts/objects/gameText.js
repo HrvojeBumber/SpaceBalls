@@ -7,17 +7,17 @@
 /// <reference path="../constants.ts" />
 var objects;
 (function (objects) {
-    var Label = (function (_super) {
-        __extends(Label, _super);
-        function Label(x, y, labelText) {
-            _super.call(this, labelText, constants.LABEL_FONT, constants.LABEL_COLOUR);
-            this.regX = this.getBounds().width * 0.5;
-            this.regY = this.getBounds().height * 0.5;
+    var gameText = (function (_super) {
+        __extends(gameText, _super);
+        function gameText(x, y, labelText) {
+            _super.call(this, labelText, constants.TEXT_FONT, constants.LABEL_COLOUR);
+            this.regX = this.getBounds().width / 2;
+            this.regY = this.getBounds().height / 2;
             this.x = x;
             this.y = y;
         }
-        return Label;
+        return gameText;
     })(createjs.Text);
-    objects.Label = Label;
+    objects.gameText = gameText;
 })(objects || (objects = {}));
-//# sourceMappingURL=label.js.map
+//# sourceMappingURL=gameText.js.map

@@ -10,7 +10,7 @@ module objects {
         constructor(stage: createjs.Stage, game: createjs.Container) {
             this.stage = stage;
             this.game = game;
-            this.image = new createjs.Bitmap(managers.Assets.loader.getResult("menu"));
+            this.image = new createjs.Bitmap(managers.Assets.loader.getResult("space"));
             this.width = this.image.getBounds().width;
             this.height = this.image.getBounds().height;
 
