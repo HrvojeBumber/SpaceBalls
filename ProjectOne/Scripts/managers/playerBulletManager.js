@@ -25,7 +25,7 @@ var managers;
         BulletManager.prototype.update = function () {
             if (this.bulletOnScreen == true) {
                 // move the bullet up stage
-                this.bullet.y -= 5;
+                this.bullet.y -= 7;
 
                 // check to see if the bullet has left the stage
                 if (this.bullet.y < 0) {

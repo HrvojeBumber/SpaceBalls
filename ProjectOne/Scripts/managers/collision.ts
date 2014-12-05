@@ -12,14 +12,14 @@ module managers {
         private player: objects.Player;
         private enemy: objects.Enemy;
         private enemies = [];
-        private bullets = [];
+        private playerBullet;
         private scoreboard: objects.Scoreboard;
         private game: createjs.Container;
 
-        constructor(player: objects.Player, scoreboard: objects.Scoreboard, game: createjs.Container, bullets?, enemies?) {
+        constructor(player: objects.Player, scoreboard: objects.Scoreboard, game: createjs.Container, playerBullet: objects.PlayerBullet, enemies?) {
             this.player = player;
             this.enemies = enemies;
-            this.bullets = bullets;
+            this.playerBullet = playerBullet;
             this.scoreboard = scoreboard;
 
             this.game = game;
@@ -44,7 +44,7 @@ module managers {
         }
 
         // check collision between plane and any cloud object
-        private planeAndCloud(cloud: objects.Enemy) {
+        /*private planeAndCloud(cloud: objects.Enemy) {
             var p1: createjs.Point = new createjs.Point();
             var p2: createjs.Point = new createjs.Point();
             p1.x = this.player.x;
@@ -54,12 +54,12 @@ module managers {
             if (this.distance(p1, p2) < ((this.player.height * 0.5) + (cloud.height * 0.5))) {
                 createjs.Sound.play("explosion");
                 // show explosion animation
-                /*var explosion = new objects.Explosion(game);
+                var explosion = new objects.Explosion(game);
                 explosion.x = this.player.x;
                 explosion.y = this.player.y;
                 explosion.on("animationend", function (e) { explosion.remove(); });
                 this.player.gotoAndPlay("flickerPlane");
-                this.player.onStage = false;*/
+                this.player.onStage = false;
                 setTimeout(function (e) {
                     this.plane.gotoAndPlay("plane");
                     this.plane.onStage = true;
@@ -116,7 +116,7 @@ module managers {
 
                 //enemy.reset();
             }
-        }
+        }*/
 
         // check collision between bullet and any enemy object
         private bulletAndEnemy(bullet: objects.PlayerBullet, enemy: objects.Enemy) {
@@ -127,7 +127,7 @@ module managers {
             p2.x = enemy.x;
             p2.y = enemy.y;
             if (this.distance(p1, p2) < ((bullet.height * 0.5) + (enemy.height * 0.5))) {
-                createjs.Sound.play("explosion");
+                //createjs.Sound.play("explosion");
                 // show explosion animation
                 //var explosion = new objects.Explosion(game);
                 //explosion.x = enemy.x;
@@ -142,21 +142,23 @@ module managers {
         // Utility Function to Check Collisions
         update() {
             if (player.onStage == true) {
-                for (var count = 0; count < constants.ENEMY_NUM; count++) {
-                    this.planeAndCloud(this.enemies[count]);
+                if (this.playerBullet.bulletOnScreen) {
+                    for (var count = 0; count < constants.ENEMY_NUM; count++) {
+                        this.bulletAndEnemy(this.playerBullet, this.enemies[count]);
+                    }
                 }
-                this.planeAndCoin();
+                //this.planeAndCoin();
 
-                if (typeof this.enemies != "undefined") {
+                /*if (typeof this.enemies != "undefined") {
                     this.planeAndEnemy(this.enemies[0]);
 
-                    if (bulletManager.firing == true) {
+                    /*if (bulletManager.firing == true) {
                         var len: number = this.bullets.length;
                         for (var count = 0; count < len; count++) {
                             this.bulletAndEnemy(this.bullets[count], this.enemies[0]);
                         }
                     }
-                }
+                }*/
             }
         }
 

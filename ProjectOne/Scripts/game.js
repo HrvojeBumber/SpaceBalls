@@ -18,6 +18,7 @@ var space;
 var background;
 var player;
 var ships = [];
+var gameTiles = [];
 var scoreboard;
 
 var collision;

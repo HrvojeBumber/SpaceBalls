@@ -125,6 +125,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <TypeScriptCompile Include="Scripts\config\config.ts" />
     <TypeScriptCompile Include="Scripts\config\controls.ts" />
     <TypeScriptCompile Include="Scripts\config\keys.ts" />
     <TypeScriptCompile Include="Scripts\constants.ts" />

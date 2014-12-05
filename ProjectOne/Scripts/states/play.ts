@@ -1,4 +1,6 @@
-﻿/// <reference path="../objects/button.ts" />
+﻿/// <reference path="../constants.ts" />
+/// <reference path="../config/config.ts" />
+/// <reference path="../objects/button.ts" />
 /// <reference path="../objects/enemy.ts" />
 /// <reference path="../objects/label.ts" />
 /// <reference path="../objects/space.ts" />
@@ -29,6 +31,16 @@ module states {
         }
     }
 
+    export function getLocation(enemy: objects.Enemy) {
+        var TileLocation: number = Math.floor(Math.random() * gameTiles.length);
+
+        enemy.location.x = gameTiles[TileLocation].x + config.TILE_WIDTH * 0.5;
+        enemy.location.y = gameTiles[TileLocation].y + config.TILE_HEIGHT * 0.5;
+        gameTiles.splice(TileLocation, 1);
+        enemy.x = enemy.location.x;
+        enemy.y = enemy.location.y;
+    }
+
     // play state Function
     export function play(): void {
         var enemyX: number = 10;
@@ -46,24 +58,29 @@ module states {
         // Show Cursor
         stage.cursor = "none";
 
-        // Create multiple enemies
-        for (var count = 0; count < constants.ENEMY_NUM; count++) {
-            ships[count] = new objects.Enemy(stage, game);
-            ships[count].setX(enemyX);
-            ships[count].setY(enemyY);
-            enemyX += 80;
-
-            if (enemyX >= 840 - (ships[count].width * 0.5)) {
-                enemyX = 10;
-                enemyY += 75;
+        //initialize the grid
+        var count = 0;
+        for (var row = 0; row < config.TILE_ROW; row++) {
+            for (var col = 0; col < config.TILE_COL; col++) {
+                gameTiles[count] = new createjs.Point();
+                gameTiles[count].x = 10 + (col * config.TILE_WIDTH);
+                gameTiles[count].y = 100 + (row * config.TILE_HEIGHT);
+                count++;
             }
+        }
+
+        // Create multiple enemies
+        for (var i = 0; i < constants.ENEMY_NUM; i++) {
+            ships[i] = new objects.Enemy(stage, game);
+
+            getLocation(ships[i]);
         }
 
         // Display Scoreboard
         scoreboard = new objects.Scoreboard(stage, game);
 
         // Instantiate Collision Manager
-        //collision = new managers.Collision(player, ships, scoreboard);
+        //collision = new managers.Collision(player, scoreboard, game, bulletManager.bullet, ships);
 
         stage.addChild(game);
     }

@@ -20,6 +20,7 @@ var space: objects.Space;
 var background: createjs.Bitmap;
 var player: objects.Player;
 var ships = [];
+var gameTiles: createjs.Point[] = [];
 var scoreboard: objects.Scoreboard;
 
 var collision: managers.Collision;
