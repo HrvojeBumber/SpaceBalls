@@ -13,14 +13,15 @@ var states;
     function playState() {
         player.update();
 
-        for (var count = 0; count < constants.ENEMY_NUM; count++) {
+        bulletManager.firing = controls.LASER;
+        bulletManager.update();
+        collision.update();
+
+        var len = ships.length;
+        for (var count = 0; count < len; count++) {
             ships[count].update();
         }
 
-        bulletManager.firing = controls.LASER;
-        bulletManager.update();
-
-        //collision.update();
         scoreboard.update();
 
         if (scoreboard.lives <= 0) {
@@ -83,7 +84,8 @@ var states;
         scoreboard = new objects.Scoreboard(stage, game);
 
         // Instantiate Collision Manager
-        //collision = new managers.Collision(player, scoreboard, game, bulletManager.bullet, ships);
+        collision = new managers.Collision(player, scoreboard, game, bulletManager.bullet, ships);
+
         stage.addChild(game);
     }
     states.play = play;

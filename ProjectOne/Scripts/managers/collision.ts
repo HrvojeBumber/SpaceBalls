@@ -43,6 +43,8 @@ module managers {
             return result;
         }
 
+
+
         // check collision between plane and any cloud object
         /*private planeAndCloud(cloud: objects.Enemy) {
             var p1: createjs.Point = new createjs.Point();
@@ -118,6 +120,10 @@ module managers {
             }
         }*/
 
+        public setBullet(bullet: objects.PlayerBullet) {
+            this.playerBullet = bullet;
+        }
+
         // check collision between bullet and any enemy object
         private bulletAndEnemy(bullet: objects.PlayerBullet, enemy: objects.Enemy) {
             var p1: createjs.Point = new createjs.Point();
@@ -136,14 +142,17 @@ module managers {
 
                 this.scoreboard.score += 100;
                 enemy.destroy();
+                bulletManager.destroyBullet(this.playerBullet);
+                this.playerBullet = null;
             }
         }
 
         // Utility Function to Check Collisions
         update() {
             if (player.onStage == true) {
-                if (this.playerBullet.bulletOnScreen) {
-                    for (var count = 0; count < constants.ENEMY_NUM; count++) {
+                if (this.playerBullet != null) {
+                    var len: number = ships.length;
+                    for (var count = 0; count < len; count++) {
                         this.bulletAndEnemy(this.playerBullet, this.enemies[count]);
                     }
                 }

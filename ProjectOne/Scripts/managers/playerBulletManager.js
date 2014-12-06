@@ -18,6 +18,7 @@ var managers;
             this.bullet.y = 570;
 
             this.bulletOnScreen = true;
+            collision.setBullet(this.bullet);
             // Play Bullet Sound
             //createjs.Sound.play("bullet");
         };

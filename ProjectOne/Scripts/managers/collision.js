@@ -108,6 +108,10 @@ var managers;
         //enemy.reset();
         }
         }*/
+        Collision.prototype.setBullet = function (bullet) {
+            this.playerBullet = bullet;
+        };
+
         // check collision between bullet and any enemy object
         Collision.prototype.bulletAndEnemy = function (bullet, enemy) {
             var p1 = new createjs.Point();
@@ -125,14 +129,17 @@ var managers;
                 //explosion.on("animationend", function (e) { explosion.remove(); });
                 this.scoreboard.score += 100;
                 enemy.destroy();
+                bulletManager.destroyBullet(this.playerBullet);
+                this.playerBullet = null;
             }
         };
 
         // Utility Function to Check Collisions
         Collision.prototype.update = function () {
             if (player.onStage == true) {
-                if (this.playerBullet.bulletOnScreen) {
-                    for (var count = 0; count < constants.ENEMY_NUM; count++) {
+                if (this.playerBullet != null) {
+                    var len = ships.length;
+                    for (var count = 0; count < len; count++) {
                         this.bulletAndEnemy(this.playerBullet, this.enemies[count]);
                     }
                 }
