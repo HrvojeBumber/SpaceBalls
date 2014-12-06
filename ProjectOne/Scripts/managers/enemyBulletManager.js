@@ -17,6 +17,8 @@ var managers;
             Bullet.x = enemy.x;
             Bullet.y = enemy.y + 30;
             this.bullets.push(Bullet);
+
+            this.firing = true;
             // Play Bullet Sound
             //createjs.Sound.play("bullet");
         };

@@ -30,6 +30,8 @@ module managers {
 
         update() {
 
+            this.firing = controls.LASER;
+
             if (this.bulletOnScreen == true) {
                 // move the bullet up stage
                 this.bullet.y -= 7;

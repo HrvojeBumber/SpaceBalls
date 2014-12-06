@@ -24,6 +24,8 @@ var managers;
         };
 
         BulletManager.prototype.update = function () {
+            this.firing = controls.LASER;
+
             if (this.bulletOnScreen == true) {
                 // move the bullet up stage
                 this.bullet.y -= 7;

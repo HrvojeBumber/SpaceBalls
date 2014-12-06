@@ -14,7 +14,7 @@ var states;
     function playState() {
         player.update();
 
-        bulletManager.firing = controls.LASER;
+        //bulletManager.firing = controls.LASER;
         bulletManager.update();
         enemyBulletManager.update();
         collision.update();
@@ -87,7 +87,7 @@ var states;
         scoreboard = new objects.Scoreboard(stage, game);
 
         // Instantiate Collision Manager
-        collision = new managers.Collision(player, scoreboard, game, bulletManager.bullet, ships);
+        collision = new managers.Collision(player, scoreboard, game, bulletManager.bullet, ships, enemyBulletManager.bullets);
 
         stage.addChild(game);
     }
