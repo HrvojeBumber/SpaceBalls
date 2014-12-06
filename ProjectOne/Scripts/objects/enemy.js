@@ -20,7 +20,7 @@ var objects;
             this.regX = this.width * 0.5;
             this.regY = this.height * 0.5;
             this.location = new createjs.Point();
-            this.dx = -5;
+            this.dx = 10;
 
             game.addChild(this);
         }
@@ -52,8 +52,8 @@ var objects;
             if (this.x >= 855 - (this.width * 0.5) - 10) {
                 this.x = 855 - (this.width * 0.5) - 10;
                 for (var count = 0; count < len; count++) {
-                    ships[count].dx = -5;
-                    ships[count].x -= 5;
+                    ships[count].dx = -10;
+                    ships[count].x -= 10;
                     ships[count].y += 10;
                 }
             }
@@ -62,9 +62,9 @@ var objects;
             if (this.x <= (this.width * 0.5) + 10) {
                 this.x = (this.width * 0.5) + 10;
                 for (var count = 0; count < len; count++) {
-                    ships[count].dx = 5;
-                    ships[count].x += 5;
-                    ships[count].y += 20;
+                    ships[count].dx = 10;
+                    ships[count].x += 10;
+                    ships[count].y += 10;
                 }
             }
         };

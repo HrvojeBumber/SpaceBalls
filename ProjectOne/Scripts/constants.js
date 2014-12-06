@@ -7,7 +7,7 @@
     constants.INSTRUCTION_STATE = 3;
 
     // Game Constants
-    constants.ENEMY_NUM = 20;
+    constants.ENEMY_NUM = 30;
     constants.LABEL_FONT = "40px modern_lcd";
     constants.TEXT_FONT = "25px modern_lcd";
     constants.LABEL_COLOUR = "#05CD1F";

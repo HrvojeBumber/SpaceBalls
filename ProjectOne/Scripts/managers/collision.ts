@@ -71,7 +71,7 @@ module managers {
                     game.removeAllChildren();
                     game.removeAllEventListeners();
                     currentState = constants.GAME_OVER_STATE;
-                    changeState(currentState);   
+                    changeState(currentState);
                 }
             }
         }

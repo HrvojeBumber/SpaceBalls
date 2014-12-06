@@ -6,7 +6,7 @@
     export var INSTRUCTION_STATE: number = 3;
 
     // Game Constants
-    export var ENEMY_NUM: number = 20;
+    export var ENEMY_NUM: number = 30;
     export var LABEL_FONT = "40px modern_lcd";
     export var TEXT_FONT = "25px modern_lcd";
     export var LABEL_COLOUR = "#05CD1F";

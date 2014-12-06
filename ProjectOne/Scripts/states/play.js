@@ -72,7 +72,7 @@ var states;
             for (var col = 0; col < config.TILE_COL; col++) {
                 gameTiles[count] = new createjs.Point();
                 gameTiles[count].x = 10 + (col * config.TILE_WIDTH);
-                gameTiles[count].y = 100 + (row * config.TILE_HEIGHT);
+                gameTiles[count].y = 50 + (row * config.TILE_HEIGHT);
                 count++;
             }
         }
