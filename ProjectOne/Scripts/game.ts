@@ -6,6 +6,8 @@
 /// <reference path="objects/scoreboard.ts" />
 /// <reference path="objects/label.ts" />
 /// <reference path="objects/button.ts" />
+/// <reference path="managers/playerbulletmanager.ts" />
+/// <reference path="managers/enemybulletmanager.ts" />
 /// <reference path="managers/collision.ts" />
 /// <reference path="states/instructions.ts" />
 /// <reference path="states/play.ts" />
@@ -25,6 +27,7 @@ var scoreboard: objects.Scoreboard;
 
 var collision: managers.Collision;
 var bulletManager: managers.BulletManager;
+var enemyBulletManager: managers.EnemyBulletManager
 
 var tryAgain: objects.Button;
 var playButton: objects.Button;

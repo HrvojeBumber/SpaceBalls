@@ -22,7 +22,7 @@ module managers {
             this.bullet.y = 570;
 
             this.bulletOnScreen = true;
-            collision.setBullet(this.bullet);
+            collision.setPlayerBullet(this.bullet);
 
             // Play Bullet Sound
             //createjs.Sound.play("bullet");

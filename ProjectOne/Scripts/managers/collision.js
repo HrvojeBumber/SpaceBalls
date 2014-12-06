@@ -108,7 +108,7 @@ var managers;
         //enemy.reset();
         }
         }*/
-        Collision.prototype.setBullet = function (bullet) {
+        Collision.prototype.setPlayerBullet = function (bullet) {
             this.playerBullet = bullet;
         };
 

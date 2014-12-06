@@ -6,6 +6,7 @@
 /// <reference path="../objects/space.ts" />
 /// <reference path="../objects/player.ts" />
 /// <reference path="../objects/scoreboard.ts" />
+/// <reference path="../managers/enemybulletmanager.ts" />
 /// <reference path="../managers/playerbulletmanager.ts" />
 /// <reference path="../managers/collision.ts" />
 var states;
@@ -15,6 +16,7 @@ var states;
 
         bulletManager.firing = controls.LASER;
         bulletManager.update();
+        enemyBulletManager.update();
         collision.update();
 
         var len = ships.length;
@@ -59,6 +61,7 @@ var states;
         player = new objects.Player(stage, game);
 
         bulletManager = new managers.BulletManager(player, game);
+        enemyBulletManager = new managers.EnemyBulletManager(game);
 
         // Show Cursor
         stage.cursor = "none";

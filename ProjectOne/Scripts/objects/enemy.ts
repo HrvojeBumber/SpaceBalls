@@ -6,10 +6,12 @@ module objects {
         game: createjs.Container;
         width: number;
         height: number;
+        onStage: boolean;
         location: createjs.Point;
         dx: number;
         constructor(stage: createjs.Stage, game: createjs.Container) {
             super(this.getRandomImage())
+            this.onStage = true;
             this.stage = stage;
             this.game = game;
             this.width = this.getBounds().width;

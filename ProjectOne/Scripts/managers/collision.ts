@@ -120,7 +120,7 @@ module managers {
             }
         }*/
 
-        public setBullet(bullet: objects.PlayerBullet) {
+        public setPlayerBullet(bullet: objects.PlayerBullet) {
             this.playerBullet = bullet;
         }
 

@@ -12,6 +12,7 @@ var objects;
         __extends(Enemy, _super);
         function Enemy(stage, game) {
             _super.call(this, this.getRandomImage());
+            this.onStage = true;
             this.stage = stage;
             this.game = game;
             this.width = this.getBounds().width;
