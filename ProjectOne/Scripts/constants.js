@@ -6,6 +6,7 @@
     constants.GAME_OVER_STATE = 2;
     constants.INSTRUCTION_STATE = 3;
     constants.LEVEL2_STATE = 4;
+    constants.BOSS_STATE = 5;
 
     // Game Constants
     constants.LEVEL1_ENEMY_NUM = 30;

@@ -4,6 +4,7 @@
 /// <reference path="objects/space.ts" />
 /// <reference path="objects/player.ts" />
 /// <reference path="objects/scoreboard.ts" />
+/// <reference path="objects/level.ts" />
 /// <reference path="objects/explosion.ts" />
 /// <reference path="objects/label.ts" />
 /// <reference path="objects/button.ts" />
@@ -25,6 +26,7 @@ var player: objects.Player;
 var ships = [];
 var gameTiles: createjs.Point[] = [];
 var scoreboard: objects.Scoreboard;
+var levelLabel: objects.LevelLabel;
 
 var collision: managers.Collision;
 var bulletManager: managers.BulletManager;
@@ -98,6 +100,11 @@ function changeState(state: number): void {
             currentStateFunction = states.level2State;
             // instantiate level2 screen
             states.level2();
+            break;
+        case constants.BOSS_STATE:
+            currentStateFunction = states.bossState;
+            // instantiate level2 screen
+            states.boss();
             break;
     }
 }

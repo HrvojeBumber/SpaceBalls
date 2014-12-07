@@ -23,6 +23,7 @@ module states {
         }
 
         scoreboard.update();
+        levelLabel.update();
 
         if (scoreboard.lives <= 0) {
             stage.removeChild(game);
@@ -39,7 +40,7 @@ module states {
             player.destroy();
             game.removeAllChildren();
             game.removeAllEventListeners();
-            currentState = constants.LEVEL2_STATE;
+            currentState = constants.BOSS_STATE;
             changeState(currentState);
         }
     }
@@ -96,6 +97,8 @@ module states {
 
         // Instantiate Collision Manager
         collision = new managers.Collision(player, scoreboard, game, bulletManager.bullet, ships, enemyBulletManager.bullets);
+
+        levelLabel = new objects.LevelLabel("level 2");
 
         stage.addChild(game);
     }

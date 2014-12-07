@@ -3,23 +3,21 @@
 /// <reference path="../objects/button.ts" />
 /// <reference path="../objects/enemy.ts" />
 /// <reference path="../objects/label.ts" />
-/// <reference path="../objects/level.ts" />
 /// <reference path="../objects/space.ts" />
 /// <reference path="../objects/player.ts" />
 /// <reference path="../objects/scoreboard.ts" />
 /// <reference path="../managers/enemybulletmanager.ts" />
 /// <reference path="../managers/playerbulletmanager.ts" />
 /// <reference path="../managers/collision.ts" />
-var states;
-(function (states) {
-    function playState() {
+module states {
+    export function bossState() {
         player.update();
 
         bulletManager.update();
         enemyBulletManager.update();
         collision.update();
 
-        var len = ships.length;
+        var len: number = ships.length;
         for (var count = 0; count < len; count++) {
             ships[count].update();
         }
@@ -46,10 +44,9 @@ var states;
             changeState(currentState);
         }
     }
-    states.playState = playState;
 
-    function getLocation(enemy) {
-        var TileLocation = Math.floor(Math.random() * gameTiles.length);
+    function getLocation(enemy: objects.Enemy) {
+        var TileLocation: number = Math.floor(Math.random() * gameTiles.length);
 
         enemy.location.x = gameTiles[TileLocation].x + config.TILE_WIDTH * 0.5;
         enemy.location.y = gameTiles[TileLocation].y + config.TILE_HEIGHT * 0.5;
@@ -59,9 +56,9 @@ var states;
     }
 
     // play state Function
-    function play() {
-        var enemyX = 10;
-        var enemyY = 100;
+    export function boss(): void {
+        var enemyX: number = 10;
+        var enemyY: number = 100;
 
         // Declare new Game Container
         game = new createjs.Container();
@@ -88,6 +85,7 @@ var states;
             }
         }
 
+        // Create multiple enemies
         for (var i = 0; i < constants.LEVEL1_ENEMY_NUM; i++) {
             ships[i] = new objects.Enemy(stage, game);
 
@@ -95,15 +93,13 @@ var states;
         }
 
         // Display Scoreboard
-        scoreboard = new objects.Scoreboard(stage, game);
+        scoreboard.showScoreboard();
 
         // Instantiate Collision Manager
         collision = new managers.Collision(player, scoreboard, game, bulletManager.bullet, ships, enemyBulletManager.bullets);
 
-        levelLabel = new objects.LevelLabel("level 1");
+        levelLabel = new objects.LevelLabel("Boss level");
 
         stage.addChild(game);
     }
-    states.play = play;
-})(states || (states = {}));
-//# sourceMappingURL=play.js.map
+} 

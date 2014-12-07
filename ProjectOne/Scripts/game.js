@@ -4,6 +4,7 @@
 /// <reference path="objects/space.ts" />
 /// <reference path="objects/player.ts" />
 /// <reference path="objects/scoreboard.ts" />
+/// <reference path="objects/level.ts" />
 /// <reference path="objects/explosion.ts" />
 /// <reference path="objects/label.ts" />
 /// <reference path="objects/button.ts" />
@@ -24,6 +25,7 @@ var player;
 var ships = [];
 var gameTiles = [];
 var scoreboard;
+var levelLabel;
 
 var collision;
 var bulletManager;
@@ -99,6 +101,12 @@ function changeState(state) {
 
             // instantiate level2 screen
             states.level2();
+            break;
+        case constants.BOSS_STATE:
+            currentStateFunction = states.bossState;
+
+            // instantiate level2 screen
+            states.boss();
             break;
     }
 }

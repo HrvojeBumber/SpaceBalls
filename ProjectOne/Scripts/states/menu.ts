@@ -30,6 +30,8 @@ module states {
         // Declare new Game Container
         game = new createjs.Container();
 
+        levelLabel = new objects.LevelLabel(" ");
+
         // Instantiate Game Objects
         space = new objects.Space(stage, game);
         space.setImage("menu");

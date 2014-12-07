@@ -3,7 +3,6 @@
 /// <reference path="../objects/button.ts" />
 /// <reference path="../objects/enemy.ts" />
 /// <reference path="../objects/label.ts" />
-/// <reference path="../objects/level.ts" />
 /// <reference path="../objects/space.ts" />
 /// <reference path="../objects/player.ts" />
 /// <reference path="../objects/scoreboard.ts" />
@@ -12,7 +11,7 @@
 /// <reference path="../managers/collision.ts" />
 var states;
 (function (states) {
-    function playState() {
+    function bossState() {
         player.update();
 
         bulletManager.update();
@@ -46,7 +45,7 @@ var states;
             changeState(currentState);
         }
     }
-    states.playState = playState;
+    states.bossState = bossState;
 
     function getLocation(enemy) {
         var TileLocation = Math.floor(Math.random() * gameTiles.length);
@@ -59,7 +58,7 @@ var states;
     }
 
     // play state Function
-    function play() {
+    function boss() {
         var enemyX = 10;
         var enemyY = 100;
 
@@ -95,15 +94,15 @@ var states;
         }
 
         // Display Scoreboard
-        scoreboard = new objects.Scoreboard(stage, game);
+        scoreboard.showScoreboard();
 
         // Instantiate Collision Manager
         collision = new managers.Collision(player, scoreboard, game, bulletManager.bullet, ships, enemyBulletManager.bullets);
 
-        levelLabel = new objects.LevelLabel("level 1");
+        levelLabel = new objects.LevelLabel("Boss level");
 
         stage.addChild(game);
     }
-    states.play = play;
+    states.boss = boss;
 })(states || (states = {}));
-//# sourceMappingURL=play.js.map
+//# sourceMappingURL=boss.js.map

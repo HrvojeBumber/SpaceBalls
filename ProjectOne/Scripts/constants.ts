@@ -5,6 +5,7 @@
     export var GAME_OVER_STATE: number = 2;
     export var INSTRUCTION_STATE: number = 3;
     export var LEVEL2_STATE: number = 4;
+    export var BOSS_STATE: number = 5;
 
     // Game Constants
     export var LEVEL1_ENEMY_NUM: number = 30;

@@ -3,6 +3,7 @@
 /// <reference path="../objects/button.ts" />
 /// <reference path="../objects/enemy.ts" />
 /// <reference path="../objects/label.ts" />
+/// <reference path="../objects/level.ts" />
 /// <reference path="../objects/space.ts" />
 /// <reference path="../objects/player.ts" />
 /// <reference path="../objects/scoreboard.ts" />
@@ -23,6 +24,7 @@ module states {
         }
 
         scoreboard.update();
+        levelLabel.update();
 
         if (scoreboard.lives <= 0) {
             stage.removeChild(game);
@@ -96,6 +98,8 @@ module states {
 
         // Instantiate Collision Manager
         collision = new managers.Collision(player, scoreboard, game, bulletManager.bullet, ships, enemyBulletManager.bullets);
+
+        levelLabel = new objects.LevelLabel("level 1");
 
         stage.addChild(game);
     }
