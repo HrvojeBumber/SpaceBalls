@@ -97,7 +97,7 @@
     <Content Include="assets\images\sprites.png" />
     <Content Include="assets\sounds\explosion.wav" />
     <Content Include="assets\sounds\laser.mp3" />
-    <Content Include="assets\sounds\space.mp3" />
+    <Content Include="assets\sounds\space.wav" />
     <Content Include="css\app.css" />
     <Content Include="css\normalize.css" />
     <Content Include="index.html" />
