@@ -12,13 +12,15 @@ var objects;
         __extends(Enemy, _super);
         function Enemy(stage, game) {
             _super.call(this, this.getRandomImage());
+            this.onStage = true;
             this.stage = stage;
             this.game = game;
             this.width = this.getBounds().width;
             this.height = this.getBounds().height;
             this.regX = this.width * 0.5;
             this.regY = this.height * 0.5;
-            this.dx = -5;
+            this.location = new createjs.Point();
+            this.dx = 10;
 
             game.addChild(this);
         }
@@ -38,18 +40,20 @@ var objects;
 
         Enemy.prototype.update = function () {
             this.checkBounds();
-            if (frameCount % 60 == 0) {
+            if (frameCount % 30 == 0) {
                 this.x += this.dx;
             }
         };
 
         Enemy.prototype.checkBounds = function () {
+            var len = ships.length;
+
             // Check Right Bounds
             if (this.x >= 855 - (this.width * 0.5) - 10) {
                 this.x = 855 - (this.width * 0.5) - 10;
-                for (var count = 0; count < constants.ENEMY_NUM; count++) {
-                    ships[count].dx = -5;
-                    ships[count].x -= 5;
+                for (var count = 0; count < len; count++) {
+                    ships[count].dx = -10;
+                    ships[count].x -= 10;
                     ships[count].y += 10;
                 }
             }
@@ -57,16 +61,23 @@ var objects;
             // Check Left Bounds
             if (this.x <= (this.width * 0.5) + 10) {
                 this.x = (this.width * 0.5) + 10;
-                for (var count = 0; count < constants.ENEMY_NUM; count++) {
-                    ships[count].dx = 5;
-                    ships[count].x += 5;
-                    ships[count].y += 20;
+                for (var count = 0; count < len; count++) {
+                    ships[count].dx = 10;
+                    ships[count].x += 10;
+                    ships[count].y += 10;
                 }
             }
         };
 
         Enemy.prototype.destroy = function () {
-            game.removeChild(this);
+            var len = ships.length;
+
+            for (var count = 0; count < len; count++) {
+                if (ships[count] == this) {
+                    ships.splice(count, 1);
+                    this.game.removeChild(this);
+                }
+            }
         };
         return Enemy;
     })(objects.GameObject);

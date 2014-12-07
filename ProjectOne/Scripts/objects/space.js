@@ -6,12 +6,15 @@ var objects;
         function Space(stage, game) {
             this.stage = stage;
             this.game = game;
-            this.image = new createjs.Bitmap(managers.Assets.loader.getResult("space"));
+            this.setImage("space");
             this.width = this.image.getBounds().width;
             this.height = this.image.getBounds().height;
-
-            game.addChild(this.image);
         }
+        Space.prototype.setImage = function (spriteName) {
+            this.image = new createjs.Bitmap(managers.Assets.loader.getResult(spriteName));
+            game.addChild(this.image);
+        };
+
         Space.prototype.destroy = function () {
             game.removeChild(this.image);
         };

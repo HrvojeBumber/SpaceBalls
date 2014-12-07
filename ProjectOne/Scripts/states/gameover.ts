@@ -29,6 +29,8 @@ module states {
         game = new createjs.Container();
 
         // Instantiate Game Objects
+        space = new objects.Space(stage, game);
+        space.setImage("space");
 
         // Show Cursor
         stage.cursor = "default";
@@ -46,7 +48,7 @@ module states {
         game.addChild(finalScore);
 
         // Display Try Again Button
-        tryAgain = new objects.Button(stage.canvas.width / 2, 300, "tryAgainButton");
+        tryAgain = new objects.Button(stage.canvas.width / 2, 300, "playagain");
         game.addChild(tryAgain);
         tryAgain.addEventListener("click", tryAgainClicked);
 

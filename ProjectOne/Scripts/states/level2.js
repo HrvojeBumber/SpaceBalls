@@ -11,7 +11,7 @@
 /// <reference path="../managers/collision.ts" />
 var states;
 (function (states) {
-    function playState() {
+    function level2State() {
         player.update();
 
         bulletManager.update();
@@ -34,7 +34,7 @@ var states;
             changeState(currentState);
         }
 
-        // Change to Level 2 State if there are no ships left
+        // Change to Level 3 State if there are no ships left
         if (ships.length <= 0) {
             stage.removeChild(game);
             player.destroy();
@@ -44,7 +44,7 @@ var states;
             changeState(currentState);
         }
     }
-    states.playState = playState;
+    states.level2State = level2State;
 
     function getLocation(enemy) {
         var TileLocation = Math.floor(Math.random() * gameTiles.length);
@@ -57,7 +57,7 @@ var states;
     }
 
     // play state Function
-    function play() {
+    function level2() {
         var enemyX = 10;
         var enemyY = 100;
 
@@ -66,7 +66,7 @@ var states;
 
         // Instantiate Game Objects
         space = new objects.Space(stage, game);
-        space.setImage("space");
+        space.setImage("level2");
         player = new objects.Player(stage, game);
 
         bulletManager = new managers.BulletManager(player, game);
@@ -77,7 +77,7 @@ var states;
 
         //initialize the grid
         var count = 0;
-        for (var row = 0; row < config.LEVEL1_TILE_ROW; row++) {
+        for (var row = 0; row < config.LEVEL2_TILE_ROW; row++) {
             for (var col = 0; col < config.TILE_COL; col++) {
                 gameTiles[count] = new createjs.Point();
                 gameTiles[count].x = 10 + (col * config.TILE_WIDTH);
@@ -86,20 +86,20 @@ var states;
             }
         }
 
-        for (var i = 0; i < constants.LEVEL1_ENEMY_NUM; i++) {
+        for (var i = 0; i < constants.LEVEL2_ENEMY_NUM; i++) {
             ships[i] = new objects.Enemy(stage, game);
 
             getLocation(ships[i]);
         }
 
         // Display Scoreboard
-        scoreboard = new objects.Scoreboard(stage, game);
+        scoreboard.showScoreboard();
 
         // Instantiate Collision Manager
         collision = new managers.Collision(player, scoreboard, game, bulletManager.bullet, ships, enemyBulletManager.bullets);
 
         stage.addChild(game);
     }
-    states.play = play;
+    states.level2 = level2;
 })(states || (states = {}));
-//# sourceMappingURL=play.js.map
+//# sourceMappingURL=level2.js.map

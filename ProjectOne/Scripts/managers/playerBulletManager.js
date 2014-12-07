@@ -18,18 +18,21 @@ var managers;
             this.bullet.y = 570;
 
             this.bulletOnScreen = true;
+            collision.setPlayerBullet(this.bullet);
             // Play Bullet Sound
             //createjs.Sound.play("bullet");
         };
 
         BulletManager.prototype.update = function () {
+            this.firing = controls.LASER;
+
             if (this.bulletOnScreen == true) {
                 // move the bullet up stage
-                this.bullet.y -= 5;
+                this.bullet.y -= 7;
 
                 // check to see if the bullet has left the stage
                 if (this.bullet.y < 0) {
-                    this.destroyBullet(this.bullet);
+                    this.destroyBullet();
                 }
             }
 
@@ -41,8 +44,8 @@ var managers;
             }
         };
 
-        BulletManager.prototype.destroyBullet = function (bullet) {
-            this.game.removeChild(bullet);
+        BulletManager.prototype.destroyBullet = function () {
+            this.game.removeChild(this.bullet);
             this.bulletOnScreen = false;
         };
         return BulletManager;

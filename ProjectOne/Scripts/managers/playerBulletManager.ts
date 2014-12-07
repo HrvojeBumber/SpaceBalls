@@ -22,6 +22,7 @@ module managers {
             this.bullet.y = 570;
 
             this.bulletOnScreen = true;
+            collision.setPlayerBullet(this.bullet);
 
             // Play Bullet Sound
             //createjs.Sound.play("bullet");
@@ -29,13 +30,15 @@ module managers {
 
         update() {
 
+            this.firing = controls.LASER;
+
             if (this.bulletOnScreen == true) {
                 // move the bullet up stage
-                this.bullet.y -= 5;
+                this.bullet.y -= 7;
 
                 // check to see if the bullet has left the stage
                 if (this.bullet.y < 0) {
-                    this.destroyBullet(this.bullet);
+                    this.destroyBullet();
                 }
             }
 
@@ -48,8 +51,8 @@ module managers {
 
         } // end update
 
-        destroyBullet(bullet: objects.PlayerBullet) {
-            this.game.removeChild(bullet);
+        destroyBullet() {
+            this.game.removeChild(this.bullet);
             this.bulletOnScreen = false;
         } // end destroyBullet
     }

@@ -4,7 +4,7 @@ module objects {
     export class Player extends objects.GameObject{
         stage: createjs.Stage;
         game: createjs.Container;
-        engineSound: createjs.SoundInstance;
+        //engineSound: createjs.SoundInstance;
         onStage: boolean = true;
         dx: number;
         constructor(stage: createjs.Stage, game: createjs.Container) {
@@ -96,7 +96,7 @@ module objects {
             this.x += this.dx;
         }
         destroy() {
-            this.engineSound.stop();
+            //this.engineSound.stop();
             game.removeChild(this);
         }
     }

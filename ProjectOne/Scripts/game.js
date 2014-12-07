@@ -6,9 +6,12 @@
 /// <reference path="objects/scoreboard.ts" />
 /// <reference path="objects/label.ts" />
 /// <reference path="objects/button.ts" />
+/// <reference path="managers/playerbulletmanager.ts" />
+/// <reference path="managers/enemybulletmanager.ts" />
 /// <reference path="managers/collision.ts" />
 /// <reference path="states/instructions.ts" />
 /// <reference path="states/play.ts" />
+/// <reference path="states/level2.ts" />
 /// <reference path="states/menu.ts" />
 /// <reference path="states/gameover.ts" />
 var stage;
@@ -18,10 +21,12 @@ var space;
 var background;
 var player;
 var ships = [];
+var gameTiles = [];
 var scoreboard;
 
 var collision;
 var bulletManager;
+var enemyBulletManager;
 
 var tryAgain;
 var playButton;
@@ -71,13 +76,11 @@ function changeState(state) {
             currentStateFunction = states.menuState;
             states.menu();
             break;
-
         case constants.PLAY_STATE:
             // instantiate play screen
             currentStateFunction = states.playState;
             states.play();
             break;
-
         case constants.GAME_OVER_STATE:
             currentStateFunction = states.gameOverState;
 
@@ -89,6 +92,12 @@ function changeState(state) {
 
             // instantiate instruction screen
             states.instructions();
+            break;
+        case constants.LEVEL2_STATE:
+            currentStateFunction = states.level2State;
+
+            // instantiate level2 screen
+            states.level2();
             break;
     }
 }

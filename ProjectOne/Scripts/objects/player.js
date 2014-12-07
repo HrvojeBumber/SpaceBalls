@@ -12,6 +12,7 @@ var objects;
         __extends(Player, _super);
         function Player(stage, game) {
             _super.call(this, "blue");
+            //engineSound: createjs.SoundInstance;
             this.onStage = true;
             this.stage = stage;
             this.game = game;
@@ -100,7 +101,7 @@ var objects;
             this.x += this.dx;
         };
         Player.prototype.destroy = function () {
-            this.engineSound.stop();
+            //this.engineSound.stop();
             game.removeChild(this);
         };
         return Player;
