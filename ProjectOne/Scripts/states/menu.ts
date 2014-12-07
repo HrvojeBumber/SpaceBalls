@@ -3,6 +3,8 @@
 /// <reference path="../objects/explosion.ts" />
 /// <reference path="../objects/label.ts" />
 module states {
+    var soundtrack: createjs.SoundInstance;
+
     export function playButtonClicked(event: MouseEvent) {
         stage.removeChild(game);
         game.removeAllChildren();
@@ -34,6 +36,8 @@ module states {
 
         // Show Cursor
         stage.cursor = "default";
+
+        soundtrack = createjs.Sound.play('soundtrack', createjs.Sound.INTERRUPT_NONE, 0, 0, -1, 1, 0);
 
         // Display Play Button
         playButton = new objects.Button(150, 500, "play");

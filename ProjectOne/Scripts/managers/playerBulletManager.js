@@ -19,8 +19,9 @@ var managers;
 
             this.bulletOnScreen = true;
             collision.setPlayerBullet(this.bullet);
+
             // Play Bullet Sound
-            //createjs.Sound.play("bullet");
+            createjs.Sound.play("shoot");
         };
 
         BulletManager.prototype.update = function () {

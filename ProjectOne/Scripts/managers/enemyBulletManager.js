@@ -19,8 +19,9 @@ var managers;
             this.bullets.push(Bullet);
 
             this.firing = true;
+
             // Play Bullet Sound
-            //createjs.Sound.play("bullet");
+            createjs.Sound.play("shoot");
         };
 
         EnemyBulletManager.prototype.update = function () {

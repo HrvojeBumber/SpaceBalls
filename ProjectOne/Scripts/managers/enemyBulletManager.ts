@@ -23,7 +23,7 @@ module managers {
             this.firing = true;
 
             // Play Bullet Sound
-            //createjs.Sound.play("bullet");
+            createjs.Sound.play("shoot");
         } // end fire
 
         update() {

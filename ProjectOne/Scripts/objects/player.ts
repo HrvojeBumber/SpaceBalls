@@ -4,7 +4,6 @@ module objects {
     export class Player extends objects.GameObject{
         stage: createjs.Stage;
         game: createjs.Container;
-        //engineSound: createjs.SoundInstance;
         onStage: boolean = true;
         dx: number;
         constructor(stage: createjs.Stage, game: createjs.Container) {
@@ -17,7 +16,6 @@ module objects {
             this.assignControls();
 
             game.addChild(this);
-            //this.engineSound = createjs.Sound.play('engine', createjs.Sound.INTERRUPT_NONE, 0, 0, -1, 1, 0);
         }
 
         // Bind key actions to player events

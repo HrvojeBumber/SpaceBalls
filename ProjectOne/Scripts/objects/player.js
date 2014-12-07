@@ -12,7 +12,6 @@ var objects;
         __extends(Player, _super);
         function Player(stage, game) {
             _super.call(this, "player");
-            //engineSound: createjs.SoundInstance;
             this.onStage = true;
             this.stage = stage;
             this.game = game;
@@ -22,7 +21,6 @@ var objects;
             this.assignControls();
 
             game.addChild(this);
-            //this.engineSound = createjs.Sound.play('engine', createjs.Sound.INTERRUPT_NONE, 0, 0, -1, 1, 0);
         }
         // Bind key actions to player events
         Player.prototype.assignControls = function () {

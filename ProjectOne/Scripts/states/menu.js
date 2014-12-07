@@ -4,6 +4,8 @@
 /// <reference path="../objects/label.ts" />
 var states;
 (function (states) {
+    var soundtrack;
+
     function playButtonClicked(event) {
         stage.removeChild(game);
         game.removeAllChildren();
@@ -38,6 +40,8 @@ var states;
 
         // Show Cursor
         stage.cursor = "default";
+
+        soundtrack = createjs.Sound.play('soundtrack', createjs.Sound.INTERRUPT_NONE, 0, 0, -1, 1, 0);
 
         // Display Play Button
         playButton = new objects.Button(150, 500, "play");
