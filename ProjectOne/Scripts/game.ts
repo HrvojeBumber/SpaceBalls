@@ -4,6 +4,7 @@
 /// <reference path="objects/space.ts" />
 /// <reference path="objects/player.ts" />
 /// <reference path="objects/scoreboard.ts" />
+/// <reference path="objects/explosion.ts" />
 /// <reference path="objects/label.ts" />
 /// <reference path="objects/button.ts" />
 /// <reference path="managers/playerbulletmanager.ts" />

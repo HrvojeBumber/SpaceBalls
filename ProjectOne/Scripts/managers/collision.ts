@@ -54,12 +54,19 @@ module managers {
             p2.x = player.x;
             p2.y = player.y;
             if (this.distance(p1, p2) < ((bullet.height * 0.5) + (player.height * 0.5))) {
-                //createjs.Sound.play("explosion");
+                createjs.Sound.play("explode");
                 // show explosion animation
-                //var explosion = new objects.Explosion(game);
-                //explosion.x = enemy.x;
-                //explosion.y = enemy.y;
-                //explosion.on("animationend", function (e) { explosion.remove(); });
+                var explosion = new objects.Explosion(game);
+                explosion.x = player.x;
+                explosion.y = player.y;
+                explosion.on("animationend", function (e) { explosion.remove(); });
+
+                this.player.gotoAndPlay("flickerPlayer");
+                this.player.onStage = false;
+                setTimeout(function (e) {
+                    this.player.gotoAndPlay("player");
+                    this.player.onStage = true;
+                }, 2000);
 
                 this.scoreboard.lives -= 1;
 
@@ -89,12 +96,12 @@ module managers {
             p2.x = enemy.x;
             p2.y = enemy.y;
             if (this.distance(p1, p2) < ((bullet.height * 0.5) + (enemy.height * 0.5))) {
-                //createjs.Sound.play("explosion");
+                createjs.Sound.play("explode");
                 // show explosion animation
-                //var explosion = new objects.Explosion(game);
-                //explosion.x = enemy.x;
-                //explosion.y = enemy.y;
-                //explosion.on("animationend", function (e) { explosion.remove(); });
+                var explosion = new objects.Explosion(game);
+                explosion.x = enemy.x;
+                explosion.y = enemy.y;
+                explosion.on("animationend", function (e) { explosion.remove(); });
 
                 this.scoreboard.score += 100;
                 enemy.destroy();

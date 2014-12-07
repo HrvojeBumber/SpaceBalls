@@ -8,7 +8,7 @@ module objects {
         onStage: boolean = true;
         dx: number;
         constructor(stage: createjs.Stage, game: createjs.Container) {
-            super("blue");
+            super("player");
             this.stage = stage;
             this.game = game;
             this.y = 600;

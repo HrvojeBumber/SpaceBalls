@@ -1,5 +1,6 @@
 ﻿/// <reference path="../constants.ts" />
 /// <reference path="../objects/button.ts" />
+/// <reference path="../objects/explosion.ts" />
 /// <reference path="../objects/label.ts" />
 module states {
     export function playButtonClicked(event: MouseEvent) {
@@ -30,8 +31,6 @@ module states {
         // Instantiate Game Objects
         space = new objects.Space(stage, game);
         space.setImage("menu");
-        //background = new createjs.Bitmap(managers.Assets.loader.getResult("menu"));
-        game.addChild(background);
 
         // Show Cursor
         stage.cursor = "default";

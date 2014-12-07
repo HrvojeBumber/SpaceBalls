@@ -11,7 +11,7 @@ var objects;
     var Player = (function (_super) {
         __extends(Player, _super);
         function Player(stage, game) {
-            _super.call(this, "blue");
+            _super.call(this, "player");
             //engineSound: createjs.SoundInstance;
             this.onStage = true;
             this.stage = stage;

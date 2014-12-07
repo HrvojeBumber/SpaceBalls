@@ -73,13 +73,12 @@
   <ItemGroup>
     <Content Include="assets\fonts\modern_lcd-7-webfont.svg" />
     <Content Include="assets\images\blue.png" />
-    <Content Include="assets\images\boss.png" />
     <Content Include="assets\images\bosslaser.png" />
     <Content Include="assets\images\button-24843_1280.png" />
     <Content Include="assets\images\enemy1.png" />
     <Content Include="assets\images\enemy2.png" />
     <Content Include="assets\images\enemy3.png" />
-    <Content Include="assets\images\exlpoision.png" />
+    <Content Include="assets\images\explosion.png" />
     <Content Include="assets\images\instructions.png" />
     <Content Include="assets\images\level2.jpg" />
     <Content Include="assets\images\playagain.png" />
@@ -135,6 +134,7 @@
     <TypeScriptCompile Include="Scripts\managers\playerBulletManager.ts" />
     <TypeScriptCompile Include="Scripts\managers\collision.ts" />
     <TypeScriptCompile Include="Scripts\objects\enemyBullet.ts" />
+    <TypeScriptCompile Include="Scripts\objects\explosion.ts" />
     <TypeScriptCompile Include="Scripts\objects\playerBullet.ts" />
     <TypeScriptCompile Include="Scripts\objects\button.ts" />
     <TypeScriptCompile Include="Scripts\objects\enemy.ts" />
