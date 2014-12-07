@@ -18,6 +18,7 @@ module states {
 
         // Instantiate Game Objects
         space = new objects.Space(stage, game);
+        space.setImage("space");
         var instructionPlayer = new createjs.Sprite(managers.Assets.atlas, "blue");
         var instructionEnemy = new createjs.Sprite(managers.Assets.atlas, "enemy1");
         var instructionBoss = new createjs.Sprite(managers.Assets.atlas, "boss");

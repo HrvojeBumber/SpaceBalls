@@ -11,12 +11,12 @@
 /// <reference path="managers/collision.ts" />
 /// <reference path="states/instructions.ts" />
 /// <reference path="states/play.ts" />
+/// <reference path="states/level2.ts" />
 /// <reference path="states/menu.ts" />
 /// <reference path="states/gameover.ts" />
 
 var stage: createjs.Stage;
 var game: createjs.Container;
-
 
 var space: objects.Space;
 var background: createjs.Bitmap;
@@ -78,13 +78,11 @@ function changeState(state: number): void {
             currentStateFunction = states.menuState;
             states.menu();
             break;
-
         case constants.PLAY_STATE:
             // instantiate play screen
             currentStateFunction = states.playState;
             states.play();
             break;
-
         case constants.GAME_OVER_STATE:
             currentStateFunction = states.gameOverState;
             // instantiate game over screen
@@ -94,6 +92,11 @@ function changeState(state: number): void {
             currentStateFunction = states.instructionState;
             // instantiate instruction screen
             states.instructions();
+            break;
+        case constants.LEVEL2_STATE:
+            currentStateFunction = states.level2State;
+            // instantiate level2 screen
+            states.level2();
             break;
     }
 }

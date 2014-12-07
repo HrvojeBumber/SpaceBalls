@@ -59,6 +59,15 @@ var managers;
                 }
             }
         };
+
+        EnemyBulletManager.prototype.removeAllBullets = function () {
+            var len = this.bullets.length;
+
+            for (var count = 0; count < len; count++) {
+                this.bullets.splice(count, 1);
+                this.game.removeChild(this.bullets[count]);
+            }
+        };
         return EnemyBulletManager;
     })();
     managers.EnemyBulletManager = EnemyBulletManager;

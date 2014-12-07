@@ -87,7 +87,7 @@ var managers;
                 //explosion.on("animationend", function (e) { explosion.remove(); });
                 this.scoreboard.score += 100;
                 enemy.destroy();
-                bulletManager.destroyBullet(this.playerBullet);
+                bulletManager.destroyBullet();
                 this.playerBullet = null;
             }
         };

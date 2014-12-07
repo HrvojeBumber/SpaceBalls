@@ -60,5 +60,15 @@ module managers {
                 }
             }
         } // end destroyBullet
+
+        removeAllBullets() {
+            var len: number = this.bullets.length;
+
+            // remove all bullets from game and from bullet array
+            for (var count = 0; count < len; count++) {
+                    this.bullets.splice(count, 1);
+                    this.game.removeChild(this.bullets[count]);
+            }
+        }
     }
 } 

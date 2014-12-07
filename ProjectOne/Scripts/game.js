@@ -11,6 +11,7 @@
 /// <reference path="managers/collision.ts" />
 /// <reference path="states/instructions.ts" />
 /// <reference path="states/play.ts" />
+/// <reference path="states/level2.ts" />
 /// <reference path="states/menu.ts" />
 /// <reference path="states/gameover.ts" />
 var stage;
@@ -75,13 +76,11 @@ function changeState(state) {
             currentStateFunction = states.menuState;
             states.menu();
             break;
-
         case constants.PLAY_STATE:
             // instantiate play screen
             currentStateFunction = states.playState;
             states.play();
             break;
-
         case constants.GAME_OVER_STATE:
             currentStateFunction = states.gameOverState;
 
@@ -93,6 +92,12 @@ function changeState(state) {
 
             // instantiate instruction screen
             states.instructions();
+            break;
+        case constants.LEVEL2_STATE:
+            currentStateFunction = states.level2State;
+
+            // instantiate level2 screen
+            states.level2();
             break;
     }
 }

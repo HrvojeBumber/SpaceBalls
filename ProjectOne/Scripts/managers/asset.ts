@@ -4,6 +4,7 @@
         { id: "loading", src: "assets/images/loading.jpg" },
         { id: "space", src: "assets/images/Space.jpg" },
         { id: "menu", src: "assets/images/spacemenu.png" },
+        { id: "level2", src: "assets/images/level2.jpg" },
         { id: "engine", src: "assets/sounds/engine.ogg" },
         { id: "thunder", src: "assets/sounds/thunder.ogg" },
         { id: "yay", src: "assets/sounds/yay.ogg" }

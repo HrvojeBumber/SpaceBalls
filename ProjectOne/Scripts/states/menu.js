@@ -32,7 +32,10 @@ var states;
         game = new createjs.Container();
 
         // Instantiate Game Objects
-        background = new createjs.Bitmap(managers.Assets.loader.getResult("menu"));
+        space = new objects.Space(stage, game);
+        space.setImage("menu");
+
+        //background = new createjs.Bitmap(managers.Assets.loader.getResult("menu"));
         game.addChild(background);
 
         // Show Cursor

@@ -31,6 +31,9 @@ var states;
         game = new createjs.Container();
 
         // Instantiate Game Objects
+        space = new objects.Space(stage, game);
+        space.setImage("space");
+
         // Show Cursor
         stage.cursor = "default";
 

@@ -32,7 +32,7 @@ var managers;
 
                 // check to see if the bullet has left the stage
                 if (this.bullet.y < 0) {
-                    this.destroyBullet(this.bullet);
+                    this.destroyBullet();
                 }
             }
 
@@ -44,8 +44,8 @@ var managers;
             }
         };
 
-        BulletManager.prototype.destroyBullet = function (bullet) {
-            this.game.removeChild(bullet);
+        BulletManager.prototype.destroyBullet = function () {
+            this.game.removeChild(this.bullet);
             this.bulletOnScreen = false;
         };
         return BulletManager;

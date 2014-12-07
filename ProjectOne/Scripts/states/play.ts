@@ -13,7 +13,6 @@ module states {
     export function playState() {
         player.update();
 
-        //bulletManager.firing = controls.LASER;
         bulletManager.update();
         enemyBulletManager.update();
         collision.update();
@@ -33,9 +32,19 @@ module states {
             currentState = constants.GAME_OVER_STATE;
             changeState(currentState);
         }
+
+        // Change to Level 2 State if there are no ships left
+        if (ships.length <= 0) {
+            stage.removeChild(game);
+            player.destroy();
+            game.removeAllChildren();
+            game.removeAllEventListeners();
+            currentState = constants.LEVEL2_STATE;
+            changeState(currentState);
+        }
     }
 
-    export function getLocation(enemy: objects.Enemy) {
+    function getLocation(enemy: objects.Enemy) {
         var TileLocation: number = Math.floor(Math.random() * gameTiles.length);
 
         enemy.location.x = gameTiles[TileLocation].x + config.TILE_WIDTH * 0.5;
@@ -55,6 +64,7 @@ module states {
 
         // Instantiate Game Objects
         space = new objects.Space(stage, game);
+        space.setImage("space");
         player = new objects.Player(stage, game);
 
         bulletManager = new managers.BulletManager(player, game);
@@ -65,7 +75,7 @@ module states {
 
         //initialize the grid
         var count = 0;
-        for (var row = 0; row < config.TILE_ROW; row++) {
+        for (var row = 0; row < config.LEVEL1_TILE_ROW; row++) {
             for (var col = 0; col < config.TILE_COL; col++) {
                 gameTiles[count] = new createjs.Point();
                 gameTiles[count].x = 10 + (col * config.TILE_WIDTH);
@@ -75,7 +85,7 @@ module states {
         }
 
         // Create multiple enemies
-        for (var i = 0; i < constants.ENEMY_NUM; i++) {
+        for (var i = 0; i < constants.LEVEL1_ENEMY_NUM; i++) {
             ships[i] = new objects.Enemy(stage, game);
 
             getLocation(ships[i]);

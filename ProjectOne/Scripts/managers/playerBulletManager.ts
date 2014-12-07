@@ -38,7 +38,7 @@ module managers {
 
                 // check to see if the bullet has left the stage
                 if (this.bullet.y < 0) {
-                    this.destroyBullet(this.bullet);
+                    this.destroyBullet();
                 }
             }
 
@@ -51,8 +51,8 @@ module managers {
 
         } // end update
 
-        destroyBullet(bullet: objects.PlayerBullet) {
-            this.game.removeChild(bullet);
+        destroyBullet() {
+            this.game.removeChild(this.bullet);
             this.bulletOnScreen = false;
         } // end destroyBullet
     }

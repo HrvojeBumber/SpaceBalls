@@ -98,7 +98,7 @@ module managers {
 
                 this.scoreboard.score += 100;
                 enemy.destroy();
-                bulletManager.destroyBullet(this.playerBullet);
+                bulletManager.destroyBullet();
                 this.playerBullet = null;
             }
         }
