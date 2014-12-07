@@ -38,7 +38,7 @@
             "playerlaser": [9],
             "flickerPlayer": {
                 frames: [0, 1],
-                speed: 0.05
+                speed: 0.2
             }
         }
     };
