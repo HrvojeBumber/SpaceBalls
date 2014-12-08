@@ -6,6 +6,7 @@
 /// <reference path="objects/scoreboard.ts" />
 /// <reference path="objects/level.ts" />
 /// <reference path="objects/explosion.ts" />
+/// <reference path="objects/boss.ts" />
 /// <reference path="objects/label.ts" />
 /// <reference path="objects/button.ts" />
 /// <reference path="managers/playerbulletmanager.ts" />
@@ -22,6 +23,7 @@ var game;
 var space;
 var background;
 var player;
+var bossShip;
 var ships = [];
 var gameTiles = [];
 var scoreboard;
