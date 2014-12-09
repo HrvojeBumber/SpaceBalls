@@ -75,6 +75,7 @@
     <Content Include="assets\images\blue.png" />
     <Content Include="assets\images\bosslaser.png" />
     <Content Include="assets\images\bosslevel.jpg" />
+    <Content Include="assets\images\bosssprites.png" />
     <Content Include="assets\images\enemy1.png" />
     <Content Include="assets\images\enemy2.png" />
     <Content Include="assets\images\enemy3.png" />
