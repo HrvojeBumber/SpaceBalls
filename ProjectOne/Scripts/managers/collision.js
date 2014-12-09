@@ -109,14 +109,13 @@ var managers;
 
         // Utility Function to Check Collisions
         Collision.prototype.update = function () {
-            if (player.onStage == true) {
-                if (this.playerBullet != null) {
-                    var len = ships.length;
-                    for (var count = 0; count < len; count++) {
-                        this.bulletAndEnemy(this.playerBullet, this.enemies[count]);
-                    }
+            if (this.playerBullet != null) {
+                var len = ships.length;
+                for (var count = 0; count < len; count++) {
+                    this.bulletAndEnemy(this.playerBullet, this.enemies[count]);
                 }
-
+            }
+            if (player.onStage == true) {
                 if (enemyBulletManager.firing == true) {
                     this.bullets = enemyBulletManager.bullets;
                     var len = this.bullets.length;
