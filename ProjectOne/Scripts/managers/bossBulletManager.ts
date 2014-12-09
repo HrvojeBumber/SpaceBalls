@@ -7,6 +7,7 @@ module managers {
         bullets = [];
         boss: objects.Boss;
         bulletCount: number = 0;
+        fireRate: number = 30;
         firing: boolean = false;
         constructor(game: createjs.Container, boss:objects.Boss) {
             this.game = game;
@@ -45,7 +46,7 @@ module managers {
             }
 
             // fire bullet if mouse button is clicked or game container is tapped
-            if (frameCount % 30 == 0) {
+            if (frameCount % this.fireRate == 0) {
                 var randomNumber: number = Math.floor(Math.random() * this.boss.guns.length);
                 this.fire(this.boss.guns[randomNumber]);
             }

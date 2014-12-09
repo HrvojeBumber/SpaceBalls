@@ -9,13 +9,14 @@ var managers;
 (function (managers) {
     // Collision Manager Class
     var BossCollision = (function () {
-        function BossCollision(player, scoreboard, game, playerBullet, bullets, boss) {
+        function BossCollision(player, scoreboard, game, playerBullet, bullets, boss, bossbulletManager) {
             this.bullets = [];
             this.player = player;
             this.bullets = bullets;
             this.playerBullet = playerBullet;
             this.scoreboard = scoreboard;
             this.boss = boss;
+            this.bossBulletManager = bossbulletManager;
 
             this.game = game;
         }
@@ -102,6 +103,11 @@ var managers;
 
                 this.scoreboard.score += 100;
                 boss.lives -= 1;
+
+                if (boss.lives <= 10) {
+                    bossBulletManager.fireRate = 12;
+                }
+
                 bulletManager.destroyBullet();
                 this.playerBullet = null;
             }

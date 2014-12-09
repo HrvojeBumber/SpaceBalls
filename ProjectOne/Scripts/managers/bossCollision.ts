@@ -14,15 +14,17 @@ module managers {
         private boss: objects.Boss;
         private bullets = [];
         private playerBullet;
+        private bossBulletManager: managers.BossBulletManager;
         private scoreboard: objects.Scoreboard;
         private game: createjs.Container;
 
-        constructor(player: objects.Player, scoreboard: objects.Scoreboard, game: createjs.Container, playerBullet: objects.PlayerBullet, bullets, boss: objects.Boss) {
+        constructor(player: objects.Player, scoreboard: objects.Scoreboard, game: createjs.Container, playerBullet: objects.PlayerBullet, bullets, boss: objects.Boss, bossbulletManager: managers.BossBulletManager) {
             this.player = player;
             this.bullets = bullets;
             this.playerBullet = playerBullet;
             this.scoreboard = scoreboard;
             this.boss = boss;
+            this.bossBulletManager = bossbulletManager;
 
             this.game = game;
 
@@ -106,6 +108,11 @@ module managers {
 
                 this.scoreboard.score += 100;
                 boss.lives -= 1;
+
+                if (boss.lives <= 10) {
+                    bossBulletManager.fireRate = 12;
+                }
+
                 bulletManager.destroyBullet();
                 this.playerBullet = null;
             }

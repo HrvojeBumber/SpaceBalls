@@ -66,7 +66,7 @@ var states;
         scoreboard = new objects.Scoreboard(stage, game);
 
         // Instantiate Collision Manager
-        bossCollision = new managers.BossCollision(player, scoreboard, game, bulletManager.bullet, bossBulletManager.bullets, bossShip);
+        bossCollision = new managers.BossCollision(player, scoreboard, game, bulletManager.bullet, bossBulletManager.bullets, bossShip, bossBulletManager);
 
         levelLabel = new objects.LevelLabel("Boss level");
 

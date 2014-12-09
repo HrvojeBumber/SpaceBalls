@@ -16,7 +16,7 @@ var objects;
             this.stage = stage;
             this.game = game;
 
-            this.lives = 20;
+            this.lives = 30;
 
             this.dx = 5;
             this.x = stage.canvas.width * 0.5;
@@ -40,16 +40,20 @@ var objects;
             this.guns[2].y = 263;
 
             this.guns[3] = new objects.BossGun(game);
-            this.guns[3].x = 498;
-            this.guns[3].y = 263;
+            this.guns[3].x = 430;
+            this.guns[3].y = 245;
 
             this.guns[4] = new objects.BossGun(game);
-            this.guns[4].x = 580;
-            this.guns[4].y = 270;
+            this.guns[4].x = 498;
+            this.guns[4].y = 263;
 
             this.guns[5] = new objects.BossGun(game);
-            this.guns[5].x = 673;
-            this.guns[5].y = 290;
+            this.guns[5].x = 580;
+            this.guns[5].y = 270;
+
+            this.guns[6] = new objects.BossGun(game);
+            this.guns[6].x = 673;
+            this.guns[6].y = 290;
         };
 
         Boss.prototype.update = function () {

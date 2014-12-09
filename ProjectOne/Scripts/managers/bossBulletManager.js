@@ -6,6 +6,7 @@ var managers;
         function BossBulletManager(game, boss) {
             this.bullets = [];
             this.bulletCount = 0;
+            this.fireRate = 30;
             this.firing = false;
             this.game = game;
             this.boss = boss;
@@ -44,7 +45,7 @@ var managers;
             }
 
             // fire bullet if mouse button is clicked or game container is tapped
-            if (frameCount % 30 == 0) {
+            if (frameCount % this.fireRate == 0) {
                 var randomNumber = Math.floor(Math.random() * this.boss.guns.length);
                 this.fire(this.boss.guns[randomNumber]);
             }
