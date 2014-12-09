@@ -10,18 +10,14 @@
 /// <reference path="../managers/enemybulletmanager.ts" />
 /// <reference path="../managers/playerbulletmanager.ts" />
 /// <reference path="../managers/collision.ts" />
-module states {
-    export function bossState() {
+var states;
+(function (states) {
+    function bossState() {
         player.update();
 
         bulletManager.update();
-        enemyBulletManager.update();
+        bossBulletManager.update();
         collision.update();
-
-        var len: number = ships.length;
-        for (var count = 0; count < len; count++) {
-            ships[count].update();
-        }
 
         scoreboard.update();
         levelLabel.update();
@@ -45,19 +41,10 @@ module states {
             changeState(currentState);
         }
     }
-
-    function getLocation(enemy: objects.Enemy) {
-        var TileLocation: number = Math.floor(Math.random() * gameTiles.length);
-
-        enemy.location.x = gameTiles[TileLocation].x + config.TILE_WIDTH * 0.5;
-        enemy.location.y = gameTiles[TileLocation].y + config.TILE_HEIGHT * 0.5;
-        gameTiles.splice(TileLocation, 1);
-        enemy.x = enemy.location.x;
-        enemy.y = enemy.location.y;
-    }
+    states.bossState = bossState;
 
     // play state Function
-    export function boss(): void {
+    function boss() {
         // Declare new Game Container
         game = new createjs.Container();
 
@@ -66,41 +53,24 @@ module states {
         space.setImage("bosslevel");
         player = new objects.Player(stage, game);
         bossShip = new objects.Boss(stage, game);
-        
 
         bulletManager = new managers.BulletManager(player, game);
-        enemyBulletManager = new managers.EnemyBulletManager(game);
+        bossBulletManager = new managers.BossBulletManager(game, bossShip);
 
         // Show Cursor
         stage.cursor = "none";
-
-        //initialize the grid
-        var count = 0;
-        for (var row = 0; row < config.LEVEL1_TILE_ROW; row++) {
-            for (var col = 0; col < config.TILE_COL; col++) {
-                gameTiles[count] = new createjs.Point();
-                gameTiles[count].x = 10 + (col * config.TILE_WIDTH);
-                gameTiles[count].y = 50 + (row * config.TILE_HEIGHT);
-                count++;
-            }
-        }
-
-        // Create multiple enemies
-        for (var i = 0; i < constants.LEVEL1_ENEMY_NUM; i++) {
-            ships[i] = new objects.Enemy(stage, game);
-
-            getLocation(ships[i]);
-        }
 
         // Display Scoreboard
         //scoreboard.showScoreboard();
         scoreboard = new objects.Scoreboard(stage, game);
 
         // Instantiate Collision Manager
-        collision = new managers.Collision(player, scoreboard, game, bulletManager.bullet, ships, enemyBulletManager.bullets);
+        collision = new managers.Collision(player, scoreboard, game, bulletManager.bullet, ships, bossBulletManager.bullets);
 
         levelLabel = new objects.LevelLabel("Boss level");
 
         stage.addChild(game);
     }
-} 
+    states.boss = boss;
+})(states || (states = {}));
+//# sourceMappingURL=bosslevel.js.map

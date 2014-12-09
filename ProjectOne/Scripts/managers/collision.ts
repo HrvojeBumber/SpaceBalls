@@ -3,6 +3,7 @@
 /// <reference path="../objects/player.ts" />
 /// <reference path="../objects/enemybullet.ts" />
 /// <reference path="../objects/scoreboard.ts" />
+/// <reference path="enemybulletmanager.ts" />
 /// <reference path="playerbulletmanager.ts" />
 
 module managers {
@@ -10,7 +11,6 @@ module managers {
     export class Collision {
         // class variables
         private player: objects.Player;
-        private enemy: objects.Enemy;
         private enemies = [];
         private bullets = [];
         private playerBullet;
@@ -119,7 +119,7 @@ module managers {
                 }
             }
             if (player.onStage == true) {
-                if (enemyBulletManager.firing == true) {
+                if (enemyBulletManager != null && enemyBulletManager.firing == true) {
                     this.bullets = enemyBulletManager.bullets;
                     var len: number = this.bullets.length;
                     for (var count = 0; count < len; count++) {

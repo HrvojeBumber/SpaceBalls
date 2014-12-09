@@ -1,21 +1,18 @@
-﻿// boss Class
+﻿// Boss Class
 module objects {
     export class BossGun extends objects.BossObject {
         game: createjs.Container;
+        gun: objects.BossGun;
         firing: boolean;
         constructor(game: createjs.Container) {
             super("gun");
             this.game = game;
+            this.gun = this;
             this.game.addChild(this);
         }
 
-        fire() {
-            this.gotoAndPlay("cannon");
-            this.firing = true;
-            setTimeout(function (e) {
-                this.gotoAndPlay("gun");
-                this.firing = false;
-            }, 500);
+        fire(gun:objects.BossGun) {
+            gun.gotoAndPlay("cannon");
         }
 
         remove() {
