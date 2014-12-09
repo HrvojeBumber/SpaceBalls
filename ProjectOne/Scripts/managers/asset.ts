@@ -87,6 +87,39 @@
         }
     }
 
+    var bossData = {
+        "images": ["assets/images/bosssprites.png"],
+        "frames": [
+            [17, 865, 15, 41],
+            [0, 883, 15, 48],
+            [0, 832, 15, 49],
+            [0, 782, 15, 48],
+            [17, 908, 15, 48],
+            [17, 958, 15, 36],
+            [0, 933, 15, 37],
+            [0, 972, 15, 38],
+            [17, 782, 15, 39],
+            [17, 823, 15, 40],
+            [17, 865, 15, 41],
+
+            [0, 641, 17, 43],
+            [0, 734, 17, 46],
+            [19, 596, 12, 43],
+            [0, 686, 17, 46],
+            [0, 596, 17, 43],
+            [0, 686, 17, 46],
+            [19, 596, 12, 43],
+            [0, 734, 17, 46],
+            [0, 0, 307, 594]
+        ],
+
+        "animations": {
+            "cannon": [0, 10],
+            "gun": [10],
+            "laser": [11, 18],
+            "boss": [19]
+        }
+    }
     // Asset Manager Class
     export class Assets {
         public static manifest;
@@ -104,6 +137,7 @@
             this.loader.loadManifest(assetManifest);
             this.atlas = new createjs.SpriteSheet(spriteSheetData);
             this.explosion = new createjs.SpriteSheet(explosionData);
+            this.boss = new createjs.SpriteSheet(bossData);
         }
 
     }
