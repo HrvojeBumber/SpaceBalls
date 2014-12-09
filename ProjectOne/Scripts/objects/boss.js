@@ -5,18 +5,18 @@
     d.prototype = new __();
 };
 /// <reference path="../managers/asset.ts" />
+/// <reference path="bossgun.ts" />
 var objects;
 (function (objects) {
     var Boss = (function (_super) {
         __extends(Boss, _super);
         function Boss(stage, game) {
-            _super.call(this, managers.Assets.boss, "boss");
+            _super.call(this, "boss");
+            this.guns = [];
             this.stage = stage;
             this.game = game;
-            this.width = this.getBounds().width;
-            this.height = this.getBounds().height;
-            this.regX = this.width * 0.5;
-            this.regY = this.height * 0.5;
+
+            this.boss = bossShip;
 
             this.lives = 3;
 
@@ -24,8 +24,21 @@ var objects;
             this.x = stage.canvas.width * 0.5;
             this.y = 100;
 
+            this.placeGuns();
+
             game.addChild(this);
         }
+        Boss.prototype.placeGuns = function () {
+            var x = this.boss.x - this.boss.width * 0.5;
+
+            for (var count = 0; count < 6; count++) {
+                this.guns[count] = new objects.BossGun(game);
+                this.guns[count].x = x;
+                this.guns[count].y = 100;
+                x += this.boss.width / 6;
+            }
+        };
+
         Boss.prototype.update = function () {
             this.checkBounds();
             if (frameCount % 30 == 0) {
@@ -57,7 +70,7 @@ var objects;
             this.game.removeChild(this);
         };
         return Boss;
-    })(createjs.Sprite);
+    })(objects.BossObject);
     objects.Boss = Boss;
 })(objects || (objects = {}));
 //# sourceMappingURL=boss.js.map

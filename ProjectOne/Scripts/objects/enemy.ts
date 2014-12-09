@@ -4,8 +4,6 @@ module objects {
     export class Enemy extends GameObject{
         stage: createjs.Stage;
         game: createjs.Container;
-        width: number;
-        height: number;
         onStage: boolean;
         location: createjs.Point;
         dx: number;
@@ -25,14 +23,6 @@ module objects {
 
             return "enemy" + randomNum;
 
-        }
-
-        private setX(x: number) {
-            this.x = x;
-        }
-
-        private setY(y: number) {
-            this.y = y;
         }
 
         update() {

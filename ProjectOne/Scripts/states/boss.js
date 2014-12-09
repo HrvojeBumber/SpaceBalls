@@ -93,7 +93,8 @@ var states;
         }
 
         // Display Scoreboard
-        scoreboard.showScoreboard();
+        //scoreboard.showScoreboard();
+        scoreboard = new objects.Scoreboard(stage, game);
 
         // Instantiate Collision Manager
         collision = new managers.Collision(player, scoreboard, game, bulletManager.bullet, ships, enemyBulletManager.bullets);

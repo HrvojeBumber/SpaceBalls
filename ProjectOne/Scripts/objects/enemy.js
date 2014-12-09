@@ -26,14 +26,6 @@ var objects;
             return "enemy" + randomNum;
         };
 
-        Enemy.prototype.setX = function (x) {
-            this.x = x;
-        };
-
-        Enemy.prototype.setY = function (y) {
-            this.y = y;
-        };
-
         Enemy.prototype.update = function () {
             this.checkBounds();
             if (frameCount % 30 == 0) {

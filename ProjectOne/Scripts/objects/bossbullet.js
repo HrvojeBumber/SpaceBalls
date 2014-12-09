@@ -10,12 +10,12 @@ var objects;
     var BossBullet = (function (_super) {
         __extends(BossBullet, _super);
         function BossBullet(game) {
-            _super.call(this, "enemylaser");
+            _super.call(this, "laser");
             this.game = game;
             this.game.addChild(this);
         }
         return BossBullet;
-    })(objects.GameObject);
+    })(objects.BossObject);
     objects.BossBullet = BossBullet;
 })(objects || (objects = {}));
 //# sourceMappingURL=bossbullet.js.map

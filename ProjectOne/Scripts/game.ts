@@ -10,6 +10,7 @@
 /// <reference path="objects/label.ts" />
 /// <reference path="objects/button.ts" />
 /// <reference path="managers/playerbulletmanager.ts" />
+/// <reference path="managers/bossbulletmanager.ts" />
 /// <reference path="managers/enemybulletmanager.ts" />
 /// <reference path="managers/collision.ts" />
 /// <reference path="states/instructions.ts" />
@@ -57,7 +58,7 @@ function init(): void {
     createjs.Ticker.addEventListener("tick", gameLoop);
     optimizeForMobile();
 
-    currentState = constants.MENU_STATE;
+    currentState = constants.BOSS_STATE;
     changeState(currentState);
 }
 
