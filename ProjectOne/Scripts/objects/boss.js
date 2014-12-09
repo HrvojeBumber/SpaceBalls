@@ -16,7 +16,7 @@ var objects;
             this.stage = stage;
             this.game = game;
 
-            this.lives = 3;
+            this.lives = 20;
 
             this.dx = 5;
             this.x = stage.canvas.width * 0.5;

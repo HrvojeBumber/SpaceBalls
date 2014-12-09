@@ -12,6 +12,7 @@ module states {
 
     // Restart Game when Try Again Button is clicked
     export function tryAgainClicked(event: MouseEvent) {
+        bossCollision = null;
         stage.removeChild(game);
         game.removeAllChildren();
         game.removeAllEventListeners();

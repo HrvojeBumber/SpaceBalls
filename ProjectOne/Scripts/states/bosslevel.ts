@@ -17,7 +17,7 @@ module states {
 
         bulletManager.update();
         bossBulletManager.update();
-        collision.update();
+        bossCollision.update();
 
         scoreboard.update();
         levelLabel.update();
@@ -65,7 +65,7 @@ module states {
         scoreboard = new objects.Scoreboard(stage, game);
 
         // Instantiate Collision Manager
-        collision = new managers.Collision(player, scoreboard, game, bulletManager.bullet, ships, bossBulletManager.bullets);
+        bossCollision = new managers.BossCollision(player, scoreboard, game, bulletManager.bullet, bossBulletManager.bullets, bossShip);
 
         levelLabel = new objects.LevelLabel("Boss level");
 

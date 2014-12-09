@@ -22,7 +22,12 @@ module managers {
             this.bullet.y = 570;
 
             this.bulletOnScreen = true;
-            collision.setPlayerBullet(this.bullet);
+            
+            if (bossCollision != null) {
+                bossCollision.setPlayerBullet(this.bullet);
+            } else {
+                collision.setPlayerBullet(this.bullet);
+            }
 
             // Play Bullet Sound
             createjs.Sound.play("shoot");

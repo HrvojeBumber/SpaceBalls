@@ -132,6 +132,7 @@
     <TypeScriptCompile Include="Scripts\lib\tweenjs.d.ts" />
     <TypeScriptCompile Include="Scripts\managers\asset.ts" />
     <TypeScriptCompile Include="Scripts\managers\bossBulletManager.ts" />
+    <TypeScriptCompile Include="Scripts\managers\bossCollision.ts" />
     <TypeScriptCompile Include="Scripts\managers\enemyBulletManager.ts" />
     <TypeScriptCompile Include="Scripts\managers\playerBulletManager.ts" />
     <TypeScriptCompile Include="Scripts\managers\collision.ts" />

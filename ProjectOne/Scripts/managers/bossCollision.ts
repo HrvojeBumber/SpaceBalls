@@ -1,28 +1,28 @@
 ﻿/// <reference path="../objects/playerbullet.ts" />
-/// <reference path="../objects/enemy.ts" />
+/// <reference path="../objects/boss.ts" />
 /// <reference path="../objects/player.ts" />
-/// <reference path="../objects/enemybullet.ts" />
+/// <reference path="../objects/bossbullet.ts" />
 /// <reference path="../objects/scoreboard.ts" />
-/// <reference path="enemybulletmanager.ts" />
+/// <reference path="bossbulletmanager.ts" />
 /// <reference path="playerbulletmanager.ts" />
 
 module managers {
     // Collision Manager Class
-    export class Collision {
+    export class BossCollision {
         // class variables
         private player: objects.Player;
-        private enemies = [];
+        private boss: objects.Boss;
         private bullets = [];
         private playerBullet;
         private scoreboard: objects.Scoreboard;
         private game: createjs.Container;
 
-        constructor(player: objects.Player, scoreboard: objects.Scoreboard, game: createjs.Container, playerBullet: objects.PlayerBullet, enemies, bullets) {
+        constructor(player: objects.Player, scoreboard: objects.Scoreboard, game: createjs.Container, playerBullet: objects.PlayerBullet, bullets, boss: objects.Boss) {
             this.player = player;
-            this.enemies = enemies;
             this.bullets = bullets;
             this.playerBullet = playerBullet;
             this.scoreboard = scoreboard;
+            this.boss = boss;
 
             this.game = game;
 
@@ -46,7 +46,7 @@ module managers {
         }
 
         // check collision between enemy bullet and player
-        private bulletAndPlayer(bullet: objects.EnemyBullet, player: objects.Player) {
+        private bulletAndPlayer(bullet: objects.BossBullet, player: objects.Player) {
             var p1: createjs.Point = new createjs.Point();
             var p2: createjs.Point = new createjs.Point();
             p1.x = bullet.x;
@@ -70,8 +70,8 @@ module managers {
 
                 this.scoreboard.lives -= 1;
 
-                enemyBulletManager.destroyBullet(bullet);
-                this.bullets = enemyBulletManager.bullets;
+                bossBulletManager.destroyBullet(bullet);
+                this.bullets = bossBulletManager.bullets;
 
                 if (this.scoreboard.lives <= 0) {
                     stage.removeChild(game);
@@ -87,24 +87,25 @@ module managers {
             this.playerBullet = bullet;
         }
 
-        // check collision between bullet and any enemy object
-        private bulletAndEnemy(bullet: objects.PlayerBullet, enemy: objects.Enemy) {
+        // check collision between bullet and boss
+        private bulletAndBoss(bullet: objects.PlayerBullet, boss: objects.Boss) {
             var p1: createjs.Point = new createjs.Point();
             var p2: createjs.Point = new createjs.Point();
             p1.x = bullet.x;
             p1.y = bullet.y;
-            p2.x = enemy.x;
-            p2.y = enemy.y;
-            if (this.distance(p1, p2) < ((bullet.height * 0.5) + (enemy.height * 0.5))) {
+            p2.x = boss.x;
+            p2.y = boss.y;
+            if (this.distance(p1, p2) < ((bullet.height * 0.5) + (boss.height * 0.5) - 60)) {
+
                 createjs.Sound.play("explode");
                 // show explosion animation
                 var explosion = new objects.Explosion(game);
-                explosion.x = enemy.x;
-                explosion.y = enemy.y;
+                explosion.x = bullet.x;
+                explosion.y = bullet.y;
                 explosion.on("animationend", function (e) { explosion.remove(); });
 
                 this.scoreboard.score += 100;
-                enemy.destroy();
+                boss.lives -= 1;
                 bulletManager.destroyBullet();
                 this.playerBullet = null;
             }
@@ -113,13 +114,11 @@ module managers {
         // Utility Function to Check Collisions
         update() {
             if (this.playerBullet != null) {
-                var len: number = ships.length;
-                for (var count = 0; count < len; count++) {
-                    this.bulletAndEnemy(this.playerBullet, this.enemies[count]);
-                }
+                this.bulletAndBoss(this.playerBullet, this.boss);
             }
             if (player.onStage == true) {
-                if (enemyBulletManager.firing == true) {
+                if (bossBulletManager.firing == true) {
+                    this.bullets = bossBulletManager.bullets;
                     var len: number = this.bullets.length;
                     for (var count = 0; count < len; count++) {
                         this.bulletAndPlayer(this.bullets[count], this.player);
@@ -128,4 +127,4 @@ module managers {
             }
         }
     }
-} 
+}  
