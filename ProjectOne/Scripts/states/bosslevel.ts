@@ -13,6 +13,7 @@
 module states {
     export function bossState() {
         player.update();
+        bossShip.update();
 
         bulletManager.update();
         bossBulletManager.update();

@@ -7,12 +7,11 @@ module objects {
         constructor(game: createjs.Container) {
             super("gun");
             this.game = game;
-            this.gun = this;
             this.game.addChild(this);
         }
 
         fire(gun:objects.BossGun) {
-            gun.gotoAndPlay("cannon");
+            this.gotoAndPlay("cannon");
         }
 
         remove() {
