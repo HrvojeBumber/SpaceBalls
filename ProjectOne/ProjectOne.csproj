@@ -131,10 +131,12 @@
     <TypeScriptCompile Include="Scripts\lib\soundjs.d.ts" />
     <TypeScriptCompile Include="Scripts\lib\tweenjs.d.ts" />
     <TypeScriptCompile Include="Scripts\managers\asset.ts" />
+    <TypeScriptCompile Include="Scripts\managers\bossBulletManager.ts" />
     <TypeScriptCompile Include="Scripts\managers\enemyBulletManager.ts" />
     <TypeScriptCompile Include="Scripts\managers\playerBulletManager.ts" />
     <TypeScriptCompile Include="Scripts\managers\collision.ts" />
     <TypeScriptCompile Include="Scripts\objects\boss.ts" />
+    <TypeScriptCompile Include="Scripts\objects\bossbullet.ts" />
     <TypeScriptCompile Include="Scripts\objects\enemyBullet.ts" />
     <TypeScriptCompile Include="Scripts\objects\explosion.ts" />
     <TypeScriptCompile Include="Scripts\objects\level.ts" />
