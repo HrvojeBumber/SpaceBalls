@@ -14,10 +14,6 @@ module objects {
             this.onStage = true;
             this.stage = stage;
             this.game = game;
-            this.width = this.getBounds().width;
-            this.height = this.getBounds().height;
-            this.regX = this.width * 0.5;
-            this.regY = this.height * 0.5;
             this.location = new createjs.Point();
             this.dx = 10;
 

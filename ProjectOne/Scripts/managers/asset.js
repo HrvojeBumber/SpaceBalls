@@ -6,6 +6,7 @@
         { id: "space", src: "assets/images/Space.jpg" },
         { id: "menu", src: "assets/images/spacemenu.png" },
         { id: "level2", src: "assets/images/level2.jpg" },
+        { id: "bosslevel", src: "assets/images/bosslevel.jpg" },
         { id: "explode", src: "assets/sounds/explosion.wav" },
         { id: "shoot", src: "assets/sounds/laser.mp3" },
         { id: "soundtrack", src: "assets/sounds/space.wav" }

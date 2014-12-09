@@ -3,6 +3,7 @@
 /// <reference path="../objects/button.ts" />
 /// <reference path="../objects/enemy.ts" />
 /// <reference path="../objects/label.ts" />
+/// <reference path="../objects/boss.ts" />
 /// <reference path="../objects/space.ts" />
 /// <reference path="../objects/player.ts" />
 /// <reference path="../objects/scoreboard.ts" />
@@ -35,12 +36,12 @@ module states {
         }
 
         // Change to Level 2 State if there are no ships left
-        if (ships.length <= 0) {
+        if (bossShip.lives <= 0) {
             stage.removeChild(game);
             player.destroy();
             game.removeAllChildren();
             game.removeAllEventListeners();
-            currentState = constants.LEVEL2_STATE;
+            currentState = constants.GAME_OVER_STATE;
             changeState(currentState);
         }
     }
@@ -57,16 +58,15 @@ module states {
 
     // play state Function
     export function boss(): void {
-        var enemyX: number = 10;
-        var enemyY: number = 100;
-
         // Declare new Game Container
         game = new createjs.Container();
 
         // Instantiate Game Objects
         space = new objects.Space(stage, game);
-        space.setImage("space");
+        space.setImage("bosslevel");
         player = new objects.Player(stage, game);
+        bossShip = new objects.Boss(stage, game);
+        
 
         bulletManager = new managers.BulletManager(player, game);
         enemyBulletManager = new managers.EnemyBulletManager(game);

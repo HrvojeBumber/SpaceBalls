@@ -6,6 +6,7 @@
 /// <reference path="objects/scoreboard.ts" />
 /// <reference path="objects/level.ts" />
 /// <reference path="objects/explosion.ts" />
+/// <reference path="objects/boss.ts" />
 /// <reference path="objects/label.ts" />
 /// <reference path="objects/button.ts" />
 /// <reference path="managers/playerbulletmanager.ts" />
@@ -23,6 +24,7 @@ var game: createjs.Container;
 var space: objects.Space;
 var background: createjs.Bitmap;
 var player: objects.Player;
+var bossShip: objects.Boss;
 var ships = [];
 var gameTiles: createjs.Point[] = [];
 var scoreboard: objects.Scoreboard;
