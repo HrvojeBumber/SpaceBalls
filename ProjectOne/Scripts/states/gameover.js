@@ -38,8 +38,12 @@ var states;
         // Show Cursor
         stage.cursor = "default";
 
-        // Display Game Over
-        gameOverLabel = new objects.Label(stage.canvas.width / 2, 40, "GAME OVER");
+        // Display end game message if won, if not, displays the game over message
+        if (bossShip != null && bossShip.lives <= 0) {
+            gameOverLabel = new objects.Label(stage.canvas.width / 2, 40, "YOU ARE VICTORIOUS");
+        } else {
+            gameOverLabel = new objects.Label(stage.canvas.width / 2, 40, "GAME OVER");
+        }
         game.addChild(gameOverLabel);
 
         // Display Final Score Label
@@ -47,11 +51,11 @@ var states;
         game.addChild(finalScoreLabel);
 
         // Display Final Score
-        finalScore = new objects.Label(stage.canvas.width / 2, 160, scoreboard.score.toString());
+        finalScore = new objects.Label(stage.canvas.width / 2, 220, scoreboard.score.toString());
         game.addChild(finalScore);
 
         // Display Try Again Button
-        tryAgain = new objects.Button(stage.canvas.width / 2, 300, "playagain");
+        tryAgain = new objects.Button(stage.canvas.width / 2, 400, "playagain");
         game.addChild(tryAgain);
         tryAgain.addEventListener("click", tryAgainClicked);
 
