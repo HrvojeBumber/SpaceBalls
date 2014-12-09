@@ -10,7 +10,7 @@ var objects;
     var BossGun = (function (_super) {
         __extends(BossGun, _super);
         function BossGun(game) {
-            _super.call(this, "gun");
+            _super.call(this, "cannon");
             this.game = game;
             this.game.addChild(this);
         }

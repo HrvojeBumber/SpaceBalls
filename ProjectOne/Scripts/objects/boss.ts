@@ -4,7 +4,6 @@ module objects {
     export class Boss extends objects.BossObject {
         stage: createjs.Stage;
         game: createjs.Container;
-        boss: objects.Boss;
         guns = [];
         lives: number;
         dx: number;
@@ -12,8 +11,6 @@ module objects {
             super("boss");
             this.stage = stage;
             this.game = game;
-
-            this.boss = bossShip;
 
             this.lives = 3;
 
@@ -28,13 +25,13 @@ module objects {
 
         placeGuns() {
 
-            var x = this.boss.x - this.boss.width * 0.5;
+            var x = this.x - this.width * 0.5;
 
             for (var count = 0; count < 6; count++) {
                 this.guns[count] = new objects.BossGun(game);
                 this.guns[count].x = x;
                 this.guns[count].y = 100;
-                x += this.boss.width / 6;
+                x += this.width / 6;
             }
 
         }

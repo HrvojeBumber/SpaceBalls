@@ -4,7 +4,7 @@ module objects {
         game: createjs.Container;
         firing: boolean;
         constructor(game: createjs.Container) {
-            super("gun");
+            super("cannon");
             this.game = game;
             this.game.addChild(this);
         }
