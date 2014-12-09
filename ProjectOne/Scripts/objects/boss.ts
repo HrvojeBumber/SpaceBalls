@@ -12,9 +12,9 @@ module objects {
             this.stage = stage;
             this.game = game;
 
-            this.lives = 3;
+            this.lives = 20;
 
-            this.dx = 10;
+            this.dx = 5;
             this.x = stage.canvas.width * 0.5;
             this.y = 150;
 
@@ -25,21 +25,40 @@ module objects {
 
         placeGuns() {
 
-            var x = this.x - this.width * 0.5;
+            this.guns[0] = new objects.BossGun(game);
+            this.guns[0].x = 183;
+            this.guns[0].y = 290;
 
-            for (var count = 0; count < 6; count++) {
-                this.guns[count] = new objects.BossGun(game);
-                this.guns[count].x = x;
-                this.guns[count].y = 100;
-                x += this.width / 6;
-            }
+            this.guns[1] = new objects.BossGun(game);
+            this.guns[1].x = 277;
+            this.guns[1].y = 270;
+
+            this.guns[2] = new objects.BossGun(game);
+            this.guns[2].x = 357;
+            this.guns[2].y = 263;
+
+            this.guns[3] = new objects.BossGun(game);
+            this.guns[3].x = 498;
+            this.guns[3].y = 263;
+
+            this.guns[4] = new objects.BossGun(game);
+            this.guns[4].x = 580;
+            this.guns[4].y = 270;
+
+            this.guns[5] = new objects.BossGun(game);
+            this.guns[5].x = 673;
+            this.guns[5].y = 290;
 
         }
 
         update() {
             this.checkBounds();
-            if (frameCount % 30 == 0) {
+            if (frameCount % 15 == 0) {
                 this.x += this.dx;
+                var len = this.guns.length;
+                for (var count = 0; count < len ; count++) {
+                    this.guns[count].x += this.dx;
+                }
             }
         }
 
@@ -49,17 +68,29 @@ module objects {
             if (this.x >= 855 - (this.width * 0.5) - 10) {
                 this.x = 855 - (this.width * 0.5) - 10;
        
-                    this.dx = -10;
-                    this.x -= 10;
-                    this.y += 10;  
+                this.dx = -5;
+                this.x -= 5;
+                this.y += 5; 
+       
+                var len = this.guns.length;
+                for (var count = 0; count < len; count++) {
+                    this.guns[count].x -= 5;
+                    this.guns[count].y += 5;
+                }          
             }
             // Check Left Bounds
             if (this.x <= (this.width * 0.5) + 10) {
                 this.x = (this.width * 0.5) + 10;
 
-                    this.dx = 10;
-                    this.x += 10;
-                    this.y += 10;
+                this.dx = 5;
+                this.x += 5;
+                this.y += 5;
+
+                var len = this.guns.length;
+                for (var count = 0; count < len; count++) {
+                    this.guns[count].x += 5;
+                    this.guns[count].y += 5;
+                } 
             }
         }
 

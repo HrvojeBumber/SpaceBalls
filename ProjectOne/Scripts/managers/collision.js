@@ -117,8 +117,7 @@ var managers;
                 }
             }
             if (player.onStage == true) {
-                if (enemyBulletManager != null && enemyBulletManager.firing == true) {
-                    this.bullets = enemyBulletManager.bullets;
+                if (enemyBulletManager.firing == true) {
                     var len = this.bullets.length;
                     for (var count = 0; count < len; count++) {
                         this.bulletAndPlayer(this.bullets[count], this.player);

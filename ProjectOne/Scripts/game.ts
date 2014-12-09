@@ -12,6 +12,7 @@
 /// <reference path="managers/playerbulletmanager.ts" />
 /// <reference path="managers/bossbulletmanager.ts" />
 /// <reference path="managers/enemybulletmanager.ts" />
+/// <reference path="managers/bosscollision.ts" />
 /// <reference path="managers/collision.ts" />
 /// <reference path="states/instructions.ts" />
 /// <reference path="states/play.ts" />
@@ -33,6 +34,7 @@ var scoreboard: objects.Scoreboard;
 var levelLabel: objects.LevelLabel;
 
 var collision: managers.Collision;
+var bossCollision: managers.BossCollision;
 var bulletManager: managers.BulletManager;
 var enemyBulletManager: managers.EnemyBulletManager
 var bossBulletManager: managers.BossBulletManager;

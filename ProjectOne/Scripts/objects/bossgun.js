@@ -12,11 +12,10 @@ var objects;
         function BossGun(game) {
             _super.call(this, "gun");
             this.game = game;
-            this.gun = this;
             this.game.addChild(this);
         }
         BossGun.prototype.fire = function (gun) {
-            gun.gotoAndPlay("cannon");
+            this.gotoAndPlay("cannon");
         };
 
         BossGun.prototype.remove = function () {

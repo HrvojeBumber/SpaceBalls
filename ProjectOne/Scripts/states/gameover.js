@@ -13,6 +13,7 @@ var states;
 
     // Restart Game when Try Again Button is clicked
     function tryAgainClicked(event) {
+        bossCollision = null;
         stage.removeChild(game);
         game.removeAllChildren();
         game.removeAllEventListeners();

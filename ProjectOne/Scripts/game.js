@@ -12,6 +12,7 @@
 /// <reference path="managers/playerbulletmanager.ts" />
 /// <reference path="managers/bossbulletmanager.ts" />
 /// <reference path="managers/enemybulletmanager.ts" />
+/// <reference path="managers/bosscollision.ts" />
 /// <reference path="managers/collision.ts" />
 /// <reference path="states/instructions.ts" />
 /// <reference path="states/play.ts" />
@@ -32,6 +33,7 @@ var scoreboard;
 var levelLabel;
 
 var collision;
+var bossCollision;
 var bulletManager;
 var enemyBulletManager;
 var bossBulletManager;
