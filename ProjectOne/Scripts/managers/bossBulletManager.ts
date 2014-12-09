@@ -5,19 +5,23 @@ module managers {
     export class BossBulletManager {
         game: createjs.Container;
         bullets = [];
+        boss: objects.Boss;
         bulletCount: number = 0;
         firing: boolean = false;
-        constructor(game: createjs.Container) {
+        constructor(game: createjs.Container, boss:objects.Boss) {
             this.game = game;
+            this.boss = boss;
         }
 
-        fire(enemy: objects.Enemy) {
-            // create two bullets on either side of  plane
-            var Bullet: objects.EnemyBullet = new objects.EnemyBullet(this.game);
+        fire(gun: objects.BossGun) {
+            // create a bullet
+            var Bullet: objects.BossBullet = new objects.BossBullet(this.game);
+
+            gun.fire(gun);
 
             this.game.addChild(Bullet);
-            Bullet.x = enemy.x;
-            Bullet.y = enemy.y + 30;
+            Bullet.x = gun.x;
+            Bullet.y = gun.y + 20;
             this.bullets.push(Bullet);
 
             this.firing = true;
@@ -28,7 +32,7 @@ module managers {
 
         update() {
             var len: number = this.bullets.length;
-            var bullet: objects.EnemyBullet;
+            var bullet: objects.BossBullet;
 
             for (var count = len - 1; count >= 0; count--) {
                 bullet = this.bullets[count];
@@ -41,15 +45,15 @@ module managers {
             }
 
             // fire bullet if mouse button is clicked or game container is tapped
-            if (frameCount % 60 == 0) {
-                var randomNumber: number = Math.floor(Math.random() * ships.length);
-                this.fire(ships[randomNumber]);
+            if (frameCount % 30 == 0) {
+                var randomNumber: number = Math.floor(Math.random() * this.boss.guns.length);
+                this.fire(this.boss.guns[randomNumber]);
             }
             //increment bullet count to limit number of bullets being fired
             this.bulletCount++;
         } // end update
 
-        destroyBullet(bullet: objects.EnemyBullet) {
+        destroyBullet(bullet: objects.BossBullet) {
             var len: number = this.bullets.length;
 
             // remove bullet from game and from bullet array

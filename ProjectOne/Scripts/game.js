@@ -16,6 +16,7 @@
 /// <reference path="states/instructions.ts" />
 /// <reference path="states/play.ts" />
 /// <reference path="states/level2.ts" />
+/// <reference path="states/bosslevel.ts" />
 /// <reference path="states/menu.ts" />
 /// <reference path="states/gameover.ts" />
 var stage;
@@ -33,6 +34,7 @@ var levelLabel;
 var collision;
 var bulletManager;
 var enemyBulletManager;
+var bossBulletManager;
 
 var tryAgain;
 var playButton;

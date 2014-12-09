@@ -16,6 +16,7 @@
 /// <reference path="states/instructions.ts" />
 /// <reference path="states/play.ts" />
 /// <reference path="states/level2.ts" />
+/// <reference path="states/bosslevel.ts" />
 /// <reference path="states/menu.ts" />
 /// <reference path="states/gameover.ts" />
 
@@ -34,6 +35,7 @@ var levelLabel: objects.LevelLabel;
 var collision: managers.Collision;
 var bulletManager: managers.BulletManager;
 var enemyBulletManager: managers.EnemyBulletManager
+var bossBulletManager: managers.BossBulletManager;
 
 var tryAgain: objects.Button;
 var playButton: objects.Button;

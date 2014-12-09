@@ -16,11 +16,11 @@ module objects {
 
             this.dx = 10;
             this.x = stage.canvas.width * 0.5;
-            this.y = 100;
-
-            this.placeGuns();
+            this.y = 150;
 
             game.addChild(this);
+
+            this.placeGuns();
         }
 
         placeGuns() {

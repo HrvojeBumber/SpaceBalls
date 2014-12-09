@@ -3,19 +3,22 @@
 var managers;
 (function (managers) {
     var BossBulletManager = (function () {
-        function BossBulletManager(game) {
+        function BossBulletManager(game, boss) {
             this.bullets = [];
             this.bulletCount = 0;
             this.firing = false;
             this.game = game;
+            this.boss = boss;
         }
-        BossBulletManager.prototype.fire = function (enemy) {
-            // create two bullets on either side of  plane
-            var Bullet = new objects.EnemyBullet(this.game);
+        BossBulletManager.prototype.fire = function (gun) {
+            // create a bullet
+            var Bullet = new objects.BossBullet(this.game);
+
+            gun.fire(gun);
 
             this.game.addChild(Bullet);
-            Bullet.x = enemy.x;
-            Bullet.y = enemy.y + 30;
+            Bullet.x = gun.x;
+            Bullet.y = gun.y + 20;
             this.bullets.push(Bullet);
 
             this.firing = true;
@@ -41,9 +44,9 @@ var managers;
             }
 
             // fire bullet if mouse button is clicked or game container is tapped
-            if (frameCount % 60 == 0) {
-                var randomNumber = Math.floor(Math.random() * ships.length);
-                this.fire(ships[randomNumber]);
+            if (frameCount % 30 == 0) {
+                var randomNumber = Math.floor(Math.random() * this.boss.guns.length);
+                this.fire(this.boss.guns[randomNumber]);
             }
 
             //increment bullet count to limit number of bullets being fired

@@ -151,7 +151,7 @@
     <TypeScriptCompile Include="Scripts\objects\space.ts" />
     <TypeScriptCompile Include="Scripts\objects\player.ts" />
     <TypeScriptCompile Include="Scripts\objects\scoreboard.ts" />
-    <TypeScriptCompile Include="Scripts\states\boss.ts" />
+    <TypeScriptCompile Include="Scripts\states\bosslevel.ts" />
     <TypeScriptCompile Include="Scripts\states\gameover.ts" />
     <TypeScriptCompile Include="Scripts\states\instructions.ts" />
     <TypeScriptCompile Include="Scripts\states\level2.ts" />

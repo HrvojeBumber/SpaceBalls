@@ -10,11 +10,13 @@
 /// <reference path="../managers/enemybulletmanager.ts" />
 /// <reference path="../managers/playerbulletmanager.ts" />
 /// <reference path="../managers/collision.ts" />
-module states {
-    export function bossState() {
+var states;
+(function (states) {
+    function bossState() {
         player.update();
 
         bulletManager.update();
+        bossBulletManager.update();
         collision.update();
 
         scoreboard.update();
@@ -39,9 +41,10 @@ module states {
             changeState(currentState);
         }
     }
+    states.bossState = bossState;
 
     // play state Function
-    export function boss(): void {
+    function boss() {
         // Declare new Game Container
         game = new createjs.Container();
 
@@ -50,10 +53,9 @@ module states {
         space.setImage("bosslevel");
         player = new objects.Player(stage, game);
         bossShip = new objects.Boss(stage, game);
-        
 
         bulletManager = new managers.BulletManager(player, game);
-        enemyBulletManager = new managers.EnemyBulletManager(game);
+        bossBulletManager = new managers.BossBulletManager(game, bossShip);
 
         // Show Cursor
         stage.cursor = "none";
@@ -63,10 +65,12 @@ module states {
         scoreboard = new objects.Scoreboard(stage, game);
 
         // Instantiate Collision Manager
-        collision = new managers.Collision(player, scoreboard, game, bulletManager.bullet, ships, enemyBulletManager.bullets);
+        collision = new managers.Collision(player, scoreboard, game, bulletManager.bullet, ships, bossBulletManager.bullets);
 
         levelLabel = new objects.LevelLabel("Boss level");
 
         stage.addChild(game);
     }
-} 
+    states.boss = boss;
+})(states || (states = {}));
+//# sourceMappingURL=bosslevel.js.map
