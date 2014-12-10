@@ -106,6 +106,7 @@ var managers;
 
                 if (boss.lives <= 10) {
                     bossBulletManager.fireRate = 12;
+                    boss.gotoAndPlay("weakboss");
                 }
 
                 bulletManager.destroyBullet();
