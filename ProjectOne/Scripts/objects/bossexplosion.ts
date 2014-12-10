@@ -5,7 +5,7 @@ module objects {
         width: number;
         height: number;
         constructor(game: createjs.Container) {
-            super(managers.Assets.bossExplosion, "bosssplodes");
+            super(managers.Assets.bossExplosion, "explosion");
             this.width = this.getBounds().width;
             this.height = this.getBounds().height;
             this.regX = this.width * 0.5;

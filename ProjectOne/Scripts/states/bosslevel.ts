@@ -33,12 +33,27 @@ module states {
 
         // Change to Level 2 State if there are no ships left
         if (bossShip.lives <= 0) {
-            stage.removeChild(game);
-            player.destroy();
-            game.removeAllChildren();
-            game.removeAllEventListeners();
-            currentState = constants.GAME_OVER_STATE;
-            changeState(currentState);
+
+            bossShip.destroy();
+            bossBulletManager.removeAllBullets();
+
+            var explosion;
+            var len = 7;
+
+            //for (var count = 0; count < len; count++) {
+
+                explosion = new objects.Explosion(game);
+                explosion.x = Math.floor(Math.random() * bossShip.width + (bossShip.x - bossShip.width * 0.5));
+                explosion.y = Math.floor(Math.random() * bossShip.height + (bossShip.y - bossShip.height * 0.5));;
+            //}
+            setTimeout(function (e) {
+                stage.removeChild(game);
+                player.destroy();
+                game.removeAllChildren();
+                game.removeAllEventListeners();
+                currentState = constants.GAME_OVER_STATE;
+                changeState(currentState);
+            }, 2000);
         }
     }
 

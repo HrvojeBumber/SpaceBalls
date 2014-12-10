@@ -12,7 +12,7 @@ module objects {
             this.stage = stage;
             this.game = game;
 
-            this.lives = 30;
+            this.lives = 1;
 
             this.dx = 5;
             this.x = stage.canvas.width * 0.5;
@@ -100,6 +100,11 @@ module objects {
 
         destroy() {
             this.game.removeChild(this);
+
+            var len = this.guns.length;
+            for (var count = 0; count < len; count++) {
+                this.game.removeChild(this.guns[count]);
+            } 
         }
 
     }

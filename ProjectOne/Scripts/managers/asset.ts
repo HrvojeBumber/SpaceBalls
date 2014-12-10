@@ -138,7 +138,7 @@
 
     //
     var bossExplosionData = {
-        "images": ["assets/images/bosssprites.png"],
+        "images": ["assets/images/bossexp.png"],
         "frames": [
             [0, 0, 256, 256],
             [256, 0, 256, 256],

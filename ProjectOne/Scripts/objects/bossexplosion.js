@@ -10,7 +10,7 @@ var objects;
     var BossExplosion = (function (_super) {
         __extends(BossExplosion, _super);
         function BossExplosion(game) {
-            _super.call(this, managers.Assets.bossExplosion, "bosssplodes");
+            _super.call(this, managers.Assets.bossExplosion, "explosion");
             this.width = this.getBounds().width;
             this.height = this.getBounds().height;
             this.regX = this.width * 0.5;

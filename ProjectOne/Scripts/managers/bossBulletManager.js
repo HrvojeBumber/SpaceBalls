@@ -45,7 +45,7 @@ var managers;
             }
 
             // fire bullet if mouse button is clicked or game container is tapped
-            if (frameCount % this.fireRate == 0) {
+            if (this.firing && frameCount % this.fireRate == 0) {
                 var randomNumber = Math.floor(Math.random() * this.boss.guns.length);
                 this.fire(this.boss.guns[randomNumber]);
             }
@@ -72,6 +72,7 @@ var managers;
                 this.bullets.splice(count, 1);
                 this.game.removeChild(this.bullets[count]);
             }
+            this.firing = false;
         };
         return BossBulletManager;
     })();

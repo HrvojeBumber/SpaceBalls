@@ -2,6 +2,7 @@
 /// <reference path="../objects/boss.ts" />
 /// <reference path="../objects/player.ts" />
 /// <reference path="../objects/bossbullet.ts" />
+/// <reference path="../objects/bossexplosion.ts" />
 /// <reference path="../objects/scoreboard.ts" />
 /// <reference path="bossbulletmanager.ts" />
 /// <reference path="playerbulletmanager.ts" />
