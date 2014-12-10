@@ -73,6 +73,7 @@
   <ItemGroup>
     <Content Include="assets\fonts\modern_lcd-7-webfont.svg" />
     <Content Include="assets\images\blue.png" />
+    <Content Include="assets\images\bossexp.png" />
     <Content Include="assets\images\bosslaser.png" />
     <Content Include="assets\images\bosslevel.jpg" />
     <Content Include="assets\images\bosssprites.png" />
