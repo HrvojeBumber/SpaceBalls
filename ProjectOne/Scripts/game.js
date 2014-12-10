@@ -61,7 +61,7 @@ function init() {
     createjs.Ticker.addEventListener("tick", gameLoop);
     optimizeForMobile();
 
-    currentState = constants.BOSS_STATE;
+    currentState = constants.MENU_STATE;
     changeState(currentState);
 }
 

@@ -69,6 +69,8 @@ var states;
         bossShip = new objects.Boss(stage, game);
 
         bulletManager = new managers.BulletManager(player, game);
+        enemyBulletManager = null;
+        collision = null;
         bossBulletManager = new managers.BossBulletManager(game, bossShip);
 
         // Show Cursor
@@ -76,7 +78,7 @@ var states;
 
         // Display Scoreboard
         //scoreboard.showScoreboard();
-        scoreboard = new objects.Scoreboard(stage, game);
+        scoreboard.showScoreboard();
 
         // Instantiate Collision Manager
         bossCollision = new managers.BossCollision(player, scoreboard, game, bulletManager.bullet, bossBulletManager.bullets, bossShip, bossBulletManager);

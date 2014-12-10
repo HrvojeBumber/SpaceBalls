@@ -8,7 +8,7 @@ module managers {
         boss: objects.Boss;
         bulletCount: number = 0;
         fireRate: number = 30;
-        firing: boolean = false;
+        firing: boolean = true;
         constructor(game: createjs.Container, boss:objects.Boss) {
             this.game = game;
             this.boss = boss;

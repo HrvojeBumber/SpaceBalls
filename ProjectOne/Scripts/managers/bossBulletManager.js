@@ -7,7 +7,7 @@ var managers;
             this.bullets = [];
             this.bulletCount = 0;
             this.fireRate = 30;
-            this.firing = false;
+            this.firing = true;
             this.game = game;
             this.boss = boss;
         }
@@ -78,4 +78,4 @@ var managers;
     })();
     managers.BossBulletManager = BossBulletManager;
 })(managers || (managers = {}));
-//# sourceMappingURL=bossBulletManager.js.map
+//# sourceMappingURL=bossbulletmanager.js.map

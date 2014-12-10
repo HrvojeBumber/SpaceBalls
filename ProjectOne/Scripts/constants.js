@@ -15,6 +15,6 @@
     constants.TEXT_FONT = "25px modern_lcd";
     constants.LABEL_COLOUR = "#05CD1F";
     constants.GAME_TEXT_COLOUR = "#CD0000";
-    constants.PLAYER_LIVES = 3;
+    constants.PLAYER_LIVES = 5;
 })(constants || (constants = {}));
 //# sourceMappingURL=constants.js.map
