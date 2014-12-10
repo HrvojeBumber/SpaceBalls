@@ -138,6 +138,7 @@
     <TypeScriptCompile Include="Scripts\managers\collision.ts" />
     <TypeScriptCompile Include="Scripts\objects\boss.ts" />
     <TypeScriptCompile Include="Scripts\objects\bossbullet.ts" />
+    <TypeScriptCompile Include="Scripts\objects\bossexplosion.ts" />
     <TypeScriptCompile Include="Scripts\objects\bossgun.ts" />
     <TypeScriptCompile Include="Scripts\objects\bossobject.ts" />
     <TypeScriptCompile Include="Scripts\objects\enemyBullet.ts" />
