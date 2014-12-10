@@ -201,6 +201,7 @@
             this.atlas = new createjs.SpriteSheet(spriteSheetData);
             this.explosion = new createjs.SpriteSheet(explosionData);
             this.boss = new createjs.SpriteSheet(bossData);
+            this.bossExplosion = new createjs.SpriteSheet(bossExplosionData);
         };
         return Assets;
     })();

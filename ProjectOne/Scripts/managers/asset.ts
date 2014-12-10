@@ -204,6 +204,7 @@
         public static atlas: createjs.SpriteSheet;
         public static explosion: createjs.SpriteSheet;
         public static boss: createjs.SpriteSheet;
+        public static bossExplosion: createjs.SpriteSheet;
 
         public static init() {
             createjs.Sound.initializeDefaultPlugins();
@@ -213,6 +214,7 @@
             this.atlas = new createjs.SpriteSheet(spriteSheetData);
             this.explosion = new createjs.SpriteSheet(explosionData);
             this.boss = new createjs.SpriteSheet(bossData);
+            this.bossExplosion = new createjs.SpriteSheet(bossExplosionData);
         }
 
     }
