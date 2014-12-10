@@ -34,7 +34,7 @@ module states {
             "Shoot all the enemies to complete the level." +
             "There are 3 levels.The third level is a boss level." +
             "Avoid the enemy ships lasers,if you get hit with one you will lose a life." +
-            "If you lose all 3 of your lives, it's game over.", constants.TEXT_FONT, constants.LABEL_COLOUR);
+            "If you lose all 5 of your lives, it's game over.", constants.TEXT_FONT, constants.LABEL_COLOUR);
 
         instructionText.x = 20;
         instructionText.y = 80;
