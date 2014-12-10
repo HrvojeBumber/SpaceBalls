@@ -12,7 +12,7 @@ module objects {
             this.stage = stage;
             this.game = game;
 
-            this.lives = 1;
+            this.lives = 30;
 
             this.dx = 5;
             this.x = stage.canvas.width * 0.5;

@@ -40,13 +40,11 @@ var states;
             var explosion;
             var len = 7;
 
-            //for (var count = 0; count < len; count++) {
             explosion = new objects.Explosion(game);
             explosion.x = Math.floor(Math.random() * bossShip.width + (bossShip.x - bossShip.width * 0.5));
             explosion.y = Math.floor(Math.random() * bossShip.height + (bossShip.y - bossShip.height * 0.5));
             ;
 
-            //}
             setTimeout(function (e) {
                 stage.removeChild(game);
                 player.destroy();
