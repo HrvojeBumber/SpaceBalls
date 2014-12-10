@@ -34,7 +34,6 @@ var states;
 
         // Change to Level 2 State if there are no ships left
         if (bossShip.lives <= 0) {
-            bossShip.destroy();
             bossBulletManager.removeAllBullets();
 
             var explosion;

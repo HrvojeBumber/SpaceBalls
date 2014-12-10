@@ -78,4 +78,4 @@ var managers;
     })();
     managers.BossBulletManager = BossBulletManager;
 })(managers || (managers = {}));
-//# sourceMappingURL=bossbulletmanager.js.map
+//# sourceMappingURL=bossBulletManager.js.map

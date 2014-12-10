@@ -30,7 +30,7 @@ var states;
         // Display title and instructions
         instructionTitleLabel = new objects.Label(360, 30, "Instructions");
 
-        instructionText = new createjs.Text("Control the blue ship with the arrow keys or A and D, press space to shoot." + "Shoot all the enemies to complete the level." + "There are 3 levels.The third level is a boss level." + "Avoid the enemy ships lasers,if you get hit with one you will lose a life." + "If you lose all 3 of your lives, it's game over.", constants.TEXT_FONT, constants.LABEL_COLOUR);
+        instructionText = new createjs.Text("Control the blue ship with the arrow keys or A and D, press space to shoot." + "Shoot all the enemies to complete the level." + "There are 3 levels.The third level is a boss level." + "Avoid the enemy ships lasers,if you get hit with one you will lose a life." + "If you lose all 5 of your lives, it's game over.", constants.TEXT_FONT, constants.LABEL_COLOUR);
 
         instructionText.x = 20;
         instructionText.y = 80;
