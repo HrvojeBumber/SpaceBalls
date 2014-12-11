@@ -112,9 +112,10 @@ module managers {
 
         // Utility Function to Check Collisions
         update() {
-            if (this.playerBullet != null) {
+            
                 var len: number = ships.length;
-                for (var count = 0; count < len; count++) {
+            for (var count = 0; count < len; count++) {
+                if (this.playerBullet != null) {
                     this.bulletAndEnemy(this.playerBullet, this.enemies[count]);
                 }
             }
