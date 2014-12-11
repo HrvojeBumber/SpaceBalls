@@ -120,7 +120,9 @@ var managers;
                 if (enemyBulletManager.firing == true) {
                     var len = this.bullets.length;
                     for (var count = 0; count < len; count++) {
-                        this.bulletAndPlayer(this.bullets[count], this.player);
+                        if (this.bullets[count] != null) {
+                            this.bulletAndPlayer(this.bullets[count], this.player);
+                        }
                     }
                 }
             }
