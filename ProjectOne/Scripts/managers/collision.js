@@ -119,7 +119,7 @@ var managers;
             if (player.onStage == true) {
                 var len = this.bullets.length;
                 for (var count = 0; count < len; count++) {
-                    if (enemyBulletManager.firing == true) {
+                    if (this.bullets[count] != null) {
                         this.bulletAndPlayer(this.bullets[count], this.player);
                     }
                 }
