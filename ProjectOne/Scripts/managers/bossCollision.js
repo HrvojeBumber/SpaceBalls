@@ -125,7 +125,7 @@ var managers;
                     this.bullets = bossBulletManager.bullets;
                     var len = this.bullets.length;
                     for (var count = 0; count < len; count++) {
-                        if (this.bullets[count]) {
+                        if (this.bullets[count] != null) {
                             this.bulletAndPlayer(this.bullets[count], this.player);
                         }
                     }
@@ -136,4 +136,4 @@ var managers;
     })();
     managers.BossCollision = BossCollision;
 })(managers || (managers = {}));
-//# sourceMappingURL=bosscollision.js.map
+//# sourceMappingURL=bossCollision.js.map

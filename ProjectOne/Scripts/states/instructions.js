@@ -12,7 +12,6 @@ var states;
         var instructionTitleLabel;
         var instructionText;
         var labelText;
-        var bossLabelText;
 
         // Declare new Game Container
         game = new createjs.Container();
@@ -20,9 +19,8 @@ var states;
         // Instantiate Game Objects
         space = new objects.Space(stage, game);
         space.setImage("space");
-        var instructionPlayer = new createjs.Sprite(managers.Assets.atlas, "blue");
+        var instructionPlayer = new createjs.Sprite(managers.Assets.atlas, "player");
         var instructionEnemy = new createjs.Sprite(managers.Assets.atlas, "enemy1");
-        var instructionBoss = new createjs.Sprite(managers.Assets.atlas, "boss");
 
         // Show Cursor
         stage.cursor = "default";
@@ -41,8 +39,7 @@ var states;
         game.addChild(instructionTitleLabel);
         game.addChild(instructionText);
 
-        labelText = new objects.gameText(123, 470, " ENEMY  PLAYER");
-        bossLabelText = new objects.gameText(675, 420, "BOSS");
+        labelText = new objects.gameText(170, 470, " ENEMY  PLAYER");
 
         instructionPlayer.x = 220;
         instructionPlayer.y = 500;
@@ -50,14 +47,9 @@ var states;
         instructionEnemy.x = 55;
         instructionEnemy.y = 500;
 
-        instructionBoss.x = 600;
-        instructionBoss.y = 450;
-
         game.addChild(instructionPlayer);
         game.addChild(instructionEnemy);
-        game.addChild(instructionBoss);
         game.addChild(labelText);
-        game.addChild(bossLabelText);
 
         // Display Play Button
         playButton = new objects.Button(440, 530, "play");

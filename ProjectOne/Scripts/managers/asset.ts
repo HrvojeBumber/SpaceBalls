@@ -136,65 +136,6 @@
         }
     }
 
-    //
-    var bossExplosionData = {
-        "images": ["assets/images/bossexp.png"],
-        "frames": [
-            [0, 0, 256, 256],
-            [256, 0, 256, 256],
-            [512, 0, 256, 256],
-            [768, 0, 256, 256],
-            [1024, 0, 256, 256],
-            [1280, 0, 256, 256],
-            [1536, 0, 256, 256],
-            [1792, 0, 256, 256],
-            [2048, 0, 256, 256],
-            [2304, 0, 256, 256],
-            [2560, 0, 256, 256],
-            [2816, 0, 256, 256],
-            [3072, 0, 256, 256],
-            [3328, 0, 256, 256],
-            [3584, 0, 256, 256],
-            [3840, 0, 256, 256],
-            [4096, 0, 256, 256],
-            [4352, 0, 256, 256],
-            [4608, 0, 256, 256],
-            [4864, 0, 256, 256],
-            [5120, 0, 256, 256],
-            [5376, 0, 256, 256],
-            [5632, 0, 256, 256],
-            [5888, 0, 256, 256],
-            [6144, 0, 256, 256],
-            [6400, 0, 256, 256],
-            [6656, 0, 256, 256],
-            [6912, 0, 256, 256],
-            [7168, 0, 256, 256],
-            [7425, 0, 256, 256],
-            [7680, 0, 256, 256],
-            [7936, 0, 256, 256],
-            [8192, 0, 256, 256],
-            [8448, 0, 256, 256],
-            [8704, 0, 256, 256],
-            [8960, 0, 256, 256],
-            [9216, 0, 256, 256],
-            [9472, 0, 256, 256],
-            [9728, 0, 256, 256],
-            [9984, 0, 256, 256],
-            [10240, 0, 256, 256],
-            [10496, 0, 256, 256],
-            [10752, 0, 256, 256],
-            [11008, 0, 256, 256],
-            [11262, 0, 256, 256],
-            [11520, 0, 256, 256],
-            [11776, 0, 256, 256],
-            [12032, 0, 256, 256]
-        ],
-
-        "animations": {
-            "explosion": [0, 47]
-        }
-    }  
-
     // Asset Manager Class
     export class Assets {
         public static manifest;
@@ -204,7 +145,6 @@
         public static atlas: createjs.SpriteSheet;
         public static explosion: createjs.SpriteSheet;
         public static boss: createjs.SpriteSheet;
-        public static bossExplosion: createjs.SpriteSheet;
 
         public static init() {
             createjs.Sound.initializeDefaultPlugins();
@@ -214,7 +154,6 @@
             this.atlas = new createjs.SpriteSheet(spriteSheetData);
             this.explosion = new createjs.SpriteSheet(explosionData);
             this.boss = new createjs.SpriteSheet(bossData);
-            this.bossExplosion = new createjs.SpriteSheet(bossExplosionData);
         }
 
     }
