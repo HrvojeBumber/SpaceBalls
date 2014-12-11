@@ -117,12 +117,10 @@ var managers;
                 }
             }
             if (player.onStage == true) {
-                if (enemyBulletManager.firing == true) {
-                    var len = this.bullets.length;
-                    for (var count = 0; count < len; count++) {
-                        if (this.bullets[count] != null) {
-                            this.bulletAndPlayer(this.bullets[count], this.player);
-                        }
+                var len = this.bullets.length;
+                for (var count = 0; count < len; count++) {
+                    if (enemyBulletManager.firing == true) {
+                        this.bulletAndPlayer(this.bullets[count], this.player);
                     }
                 }
             }

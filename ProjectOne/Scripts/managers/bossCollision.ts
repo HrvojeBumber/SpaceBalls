@@ -130,7 +130,7 @@ module managers {
                     this.bullets = bossBulletManager.bullets;
                     var len: number = this.bullets.length;
                     for (var count = 0; count < len; count++) {
-                        if (this.bullets[count]) {
+                        if (this.bullets[count] != null) {
                             this.bulletAndPlayer(this.bullets[count], this.player);
                         }
                     }

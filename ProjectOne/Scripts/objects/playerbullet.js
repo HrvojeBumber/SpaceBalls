@@ -18,4 +18,4 @@ var objects;
     })(objects.GameObject);
     objects.PlayerBullet = PlayerBullet;
 })(objects || (objects = {}));
-//# sourceMappingURL=playerBullet.js.map
+//# sourceMappingURL=playerbullet.js.map
