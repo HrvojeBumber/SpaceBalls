@@ -9,6 +9,12 @@
 /// <reference path="../managers/enemybulletmanager.ts" />
 /// <reference path="../managers/playerbulletmanager.ts" />
 /// <reference path="../managers/collision.ts" />
+
+/*FileName: level2.ts
+Authors: Kevin Donkers and Hrvoje Bumber
+Last Modified by: Kevin Donkers
+Description: This is the second level state that leads to the boss state 
+*/
 module states {
     export function level2State() {
         player.update();
@@ -25,6 +31,7 @@ module states {
         scoreboard.update();
         levelLabel.update();
 
+        //check if the player dies
         if (scoreboard.lives <= 0) {
             stage.removeChild(game);
             player.destroy();
@@ -45,6 +52,7 @@ module states {
         }
     }
 
+    //get the enemy ships location
     function getLocation(enemy: objects.Enemy) {
         var TileLocation: number = Math.floor(Math.random() * gameTiles.length);
 
@@ -98,6 +106,7 @@ module states {
         // Instantiate Collision Manager
         collision = new managers.Collision(player, scoreboard, game, bulletManager.bullet, ships, enemyBulletManager.bullets);
 
+        //show the level 2 label
         levelLabel = new objects.LevelLabel("level 2");
 
         stage.addChild(game);

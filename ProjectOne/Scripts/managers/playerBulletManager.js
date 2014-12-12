@@ -1,5 +1,10 @@
 ﻿/// <reference path="../objects/playerbullet.ts" />
 /// <reference path="../objects/player.ts" />
+/*FileName: playerBulletManager.ts
+Authors: Kevin Donkers and Hrvoje Bumber
+Last Modified by: Kevin Donkers
+Description: This is the bullet manager that handles the player firing
+*/
 var managers;
 (function (managers) {
     var BulletManager = (function () {
@@ -42,7 +47,7 @@ var managers;
                 }
             }
 
-            // fire bullet if space bar is clicked or game container is tapped
+            // fire bullet if space bar is clicked
             if ((this.firing == true) && (this.bulletOnScreen == false)) {
                 if (this.player.onStage == true) {
                     this.fire();
@@ -58,4 +63,4 @@ var managers;
     })();
     managers.BulletManager = BulletManager;
 })(managers || (managers = {}));
-//# sourceMappingURL=playerBulletManager.js.map
+//# sourceMappingURL=playerbulletmanager.js.map

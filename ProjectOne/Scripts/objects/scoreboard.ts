@@ -1,4 +1,9 @@
-﻿module objects {
+﻿/*FileName: scoreboard.ts
+Authors: Kevin Donkers and Hrvoje Bumber
+Last Modified by: Kevin Donkers
+Description: This is the scoreboard that displays player lives and score 
+*/
+module objects {
     // Scoreboard Class
     export class Scoreboard {
         stage: createjs.Stage;
@@ -22,15 +27,18 @@
             this.showScoreboard();
         }
 
+        //shows the scoreboard
         showScoreboard() {
             game.addChild(this.label);
         }
 
+        //updates the scoreboard every frame
         update() {
             this.labelText = "Lives: " + this.lives.toString() + " Score: " + this.score.toString();
             this.label.text = this.labelText;
         }
 
+        //removes the scoreboard from the screen
         destroy() {
             game.removeChild(this.label);
         }

@@ -4,7 +4,11 @@
     __.prototype = b.prototype;
     d.prototype = new __();
 };
-// Bullet Class
+/*FileName: enemyBullet.ts
+Authors: Kevin Donkers and Hrvoje Bumber
+Last Modified by: Kevin Donkers
+Description: This is the bullet object for the enemy ships
+*/
 var objects;
 (function (objects) {
     var EnemyBullet = (function (_super) {
@@ -18,4 +22,4 @@ var objects;
     })(objects.GameObject);
     objects.EnemyBullet = EnemyBullet;
 })(objects || (objects = {}));
-//# sourceMappingURL=enemyBullet.js.map
+//# sourceMappingURL=enemybullet.js.map

@@ -5,6 +5,11 @@
 /// <reference path="../objects/scoreboard.ts" />
 /// <reference path="enemybulletmanager.ts" />
 /// <reference path="playerbulletmanager.ts" />
+/*FileName: collision.ts
+Authors: Kevin Donkers and Hrvoje Bumber
+Last Modified by: Kevin Donkers
+Description: This is the collision manager for the bullets of the player and enemy ships hitting the player of enemy ships
+*/
 var managers;
 (function (managers) {
     // Collision Manager Class
@@ -56,6 +61,7 @@ var managers;
                     explosion.remove();
                 });
 
+                //flicker for 2 seconds
                 this.player.gotoAndPlay("flickerPlayer");
                 this.player.onStage = false;
                 setTimeout(function (e) {
@@ -116,6 +122,7 @@ var managers;
                     this.bulletAndEnemy(this.playerBullet, this.enemies[count]);
                 }
             }
+
             if (player.onStage == true) {
                 var len = this.bullets.length;
                 for (var count = 0; count < len; count++) {

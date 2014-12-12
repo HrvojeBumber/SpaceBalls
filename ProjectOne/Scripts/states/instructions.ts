@@ -2,11 +2,18 @@
 /// <reference path="../objects/scoreboard.ts" />
 /// <reference path="../objects/button.ts" />
 /// <reference path="../objects/label.ts" />
+
+/*FileName: instruction.ts
+Authors: Kevin Donkers and Hrvoje Bumber
+Last Modified by: Hrvoje Bumber
+Description: This is the instruction screen state that leads to the play state 
+*/
 module states {
     export function instructionState() {
         
     }
 
+    //initilize the instruction state
     export function instructions() {
         var instructionTitleLabel: objects.Label;
         var instructionText: createjs.Text;

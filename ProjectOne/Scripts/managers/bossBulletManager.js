@@ -1,5 +1,10 @@
 ﻿/// <reference path="../objects/bossbullet.ts" />
 /// <reference path="../objects/boss.ts" />
+/*FileName: bossBulletManager.ts
+Authors: Kevin Donkers and Hrvoje Bumber
+Last Modified by: Kevin Donkers
+Description: This is the bullet manager for the boss that fires a bullet from a random gun ever 30 frames
+*/
 var managers;
 (function (managers) {
     var BossBulletManager = (function () {
@@ -44,7 +49,7 @@ var managers;
                 }
             }
 
-            // fire bullet if mouse button is clicked or game container is tapped
+            // fire bullet from a random gun every 30 frames
             if (this.firing && frameCount % this.fireRate == 0) {
                 var randomNumber = Math.floor(Math.random() * this.boss.guns.length);
                 this.fire(this.boss.guns[randomNumber]);
@@ -78,4 +83,4 @@ var managers;
     })();
     managers.BossBulletManager = BossBulletManager;
 })(managers || (managers = {}));
-//# sourceMappingURL=bossBulletManager.js.map
+//# sourceMappingURL=bossbulletmanager.js.map

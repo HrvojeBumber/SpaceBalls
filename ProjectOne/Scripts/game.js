@@ -20,6 +20,13 @@
 /// <reference path="states/bosslevel.ts" />
 /// <reference path="states/menu.ts" />
 /// <reference path="states/gameover.ts" />
+/*FileName: game.ts
+Authors: Kevin Donkers and Hrvoje Bumber
+Last Modified by: Kevin Donkers
+Description: This is the main game file
+that initializes the game loop and the state machine
+*/
+//global variables
 var stage;
 var game;
 
@@ -59,17 +66,9 @@ function init() {
     stage.enableMouseOver(30);
     createjs.Ticker.setFPS(60);
     createjs.Ticker.addEventListener("tick", gameLoop);
-    optimizeForMobile();
 
     currentState = constants.MENU_STATE;
     changeState(currentState);
-}
-
-// Add touch support for mobile devices
-function optimizeForMobile() {
-    if (createjs.Touch.isSupported()) {
-        createjs.Touch.enable(stage);
-    }
 }
 
 // Game Loop

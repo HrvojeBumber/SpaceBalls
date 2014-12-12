@@ -1,10 +1,15 @@
-﻿var __extends = this.__extends || function (d, b) {
+﻿/// <reference path="../managers/asset.ts" />
+var __extends = this.__extends || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
     function __() { this.constructor = d; }
     __.prototype = b.prototype;
     d.prototype = new __();
 };
-/// <reference path="../managers/asset.ts" />
+/*FileName: bossobject.ts
+Authors: Kevin Donkers and Hrvoje Bumber
+Last Modified by: Kevin Donkers
+Description: This is the generic object for boss related sprites
+*/
 var objects;
 (function (objects) {
     var BossObject = (function (_super) {

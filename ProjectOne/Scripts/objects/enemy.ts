@@ -1,4 +1,10 @@
 ﻿/// <reference path="../managers/asset.ts" />
+
+/*FileName: enemy.ts
+Authors: Kevin Donkers and Hrvoje Bumber
+Last Modified by: Kevin Donkers
+Description: This is the enemy object that handles movement and removing ships 
+*/
 module objects {
     // Enemy class
     export class Enemy extends GameObject{

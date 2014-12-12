@@ -1,4 +1,8 @@
-﻿// Explosion Class
+﻿/*FileName: explosion.ts
+Authors: Kevin Donkers and Hrvoje Bumber
+Last Modified by: Kevin Donkers
+Description: This is the explosion object for the small ships 
+*/
 module objects {
     export class Explosion extends createjs.Sprite {
         game: createjs.Container;

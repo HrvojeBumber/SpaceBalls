@@ -2,10 +2,15 @@
 /// <reference path="../objects/boss.ts" />
 /// <reference path="../objects/player.ts" />
 /// <reference path="../objects/bossbullet.ts" />
-/// <reference path="../objects/bossexplosion.ts" />
 /// <reference path="../objects/scoreboard.ts" />
 /// <reference path="bossbulletmanager.ts" />
 /// <reference path="playerbulletmanager.ts" />
+/*FileName: bossCollision.ts
+Authors: Kevin Donkers and Hrvoje Bumber
+Last Modified by: Kevin Donkers
+Description: This is the collision manager for the boss level to check collisions between
+the boss and player bullets and between the boss and player
+*/
 var managers;
 (function (managers) {
     // Collision Manager Class
@@ -57,6 +62,7 @@ var managers;
                     explosion.remove();
                 });
 
+                //flicker player
                 this.player.gotoAndPlay("flickerPlayer");
                 this.player.onStage = false;
                 setTimeout(function (e) {
@@ -105,6 +111,7 @@ var managers;
                 this.scoreboard.score += 100;
                 boss.lives -= 1;
 
+                //check if boss goes into berserk mode
                 if (boss.lives <= 10) {
                     bossBulletManager.fireRate = 12;
                     boss.gotoAndPlay("weakboss");
@@ -136,4 +143,4 @@ var managers;
     })();
     managers.BossCollision = BossCollision;
 })(managers || (managers = {}));
-//# sourceMappingURL=bossCollision.js.map
+//# sourceMappingURL=bosscollision.js.map

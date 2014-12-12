@@ -10,6 +10,11 @@
 /// <reference path="../managers/enemybulletmanager.ts" />
 /// <reference path="../managers/playerbulletmanager.ts" />
 /// <reference path="../managers/collision.ts" />
+/*FileName: bosslevel.ts
+Authors: Kevin Donkers and Hrvoje Bumber
+Last Modified by: Kevin Donkers
+Description: This is the boss level state that leads to the game over state
+*/
 var states;
 (function (states) {
     function bossState() {
@@ -23,6 +28,7 @@ var states;
         scoreboard.update();
         levelLabel.update();
 
+        //check if the player dies
         if (scoreboard.lives <= 0) {
             stage.removeChild(game);
             player.destroy();
@@ -67,6 +73,7 @@ var states;
         player = new objects.Player(stage, game);
         bossShip = new objects.Boss(stage, game);
 
+        //instansiate the managers
         bulletManager = new managers.BulletManager(player, game);
         enemyBulletManager = null;
         collision = null;

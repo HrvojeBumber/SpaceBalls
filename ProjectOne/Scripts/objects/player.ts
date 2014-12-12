@@ -1,4 +1,10 @@
 ﻿/// <reference path="../managers/asset.ts" />
+
+/*FileName: player.ts
+Authors: Kevin Donkers and Hrvoje Bumber
+Last Modified by: Kevin Donkers
+Description: This is the player object that controls movement and shooting of the player
+*/
 module objects {
     // Player Class
     export class Player extends objects.GameObject{
@@ -93,8 +99,8 @@ module objects {
             this.controlAction();
             this.x += this.dx;
         }
+
         destroy() {
-            //this.engineSound.stop();
             game.removeChild(this);
         }
     }

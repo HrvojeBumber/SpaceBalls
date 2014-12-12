@@ -10,6 +10,13 @@
 /// <reference path="../managers/enemybulletmanager.ts" />
 /// <reference path="../managers/playerbulletmanager.ts" />
 /// <reference path="../managers/collision.ts" />
+
+/*FileName: play.ts
+Authors: Kevin Donkers and Hrvoje Bumber
+Last Modified by: Kevin Donkers
+Description: This is the first level state that has 30 enemies and leads to the second level
+*/
+
 module states {
     export function playState() {
         player.update();
@@ -26,6 +33,7 @@ module states {
         scoreboard.update();
         levelLabel.update();
 
+        //check if the player is dead
         if (scoreboard.lives <= 0) {
             stage.removeChild(game);
             player.destroy();
@@ -46,6 +54,7 @@ module states {
         }
     }
 
+    //get the location for an enemy ship
     function getLocation(enemy: objects.Enemy) {
         var TileLocation: number = Math.floor(Math.random() * gameTiles.length);
 
@@ -69,6 +78,7 @@ module states {
         space.setImage("space");
         player = new objects.Player(stage, game);
 
+        //instansiate bullet managers
         bulletManager = new managers.BulletManager(player, game);
         enemyBulletManager = new managers.EnemyBulletManager(game);
 
@@ -99,6 +109,7 @@ module states {
         // Instantiate Collision Manager
         collision = new managers.Collision(player, scoreboard, game, bulletManager.bullet, ships, enemyBulletManager.bullets);
 
+        //show level label
         levelLabel = new objects.LevelLabel("level 1");
 
         stage.addChild(game);

@@ -2,9 +2,17 @@
 /// <reference path="../objects/button.ts" />
 /// <reference path="../objects/explosion.ts" />
 /// <reference path="../objects/label.ts" />
+
+/*FileName: menu.ts
+Authors: Kevin Donkers and Hrvoje Bumber
+Last Modified by: Kevin Donkers
+Description: This is the main menu that is displayed at the start of the game
+*/
+
 module states {
     var soundtrack: createjs.SoundInstance;
 
+    //play the game when clicked
     export function playButtonClicked(event: MouseEvent) {
         stage.removeChild(game);
         game.removeAllChildren();
@@ -13,6 +21,7 @@ module states {
         changeState(currentState);
     }
 
+    //show the instructions when clicked
     export function instructionsButtonClicked(event: MouseEvent) {
         stage.removeChild(game);
         game.removeAllChildren();

@@ -1,10 +1,15 @@
-﻿var __extends = this.__extends || function (d, b) {
+﻿/// <reference path="../constants.ts" />
+var __extends = this.__extends || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
     function __() { this.constructor = d; }
     __.prototype = b.prototype;
     d.prototype = new __();
 };
-/// <reference path="../constants.ts" />
+/*FileName: gameText.ts
+Authors: Kevin Donkers and Hrvoje Bumber
+Last Modified by: Kevin Donkers
+Description: This is the game text object to create the instruction text
+*/
 var objects;
 (function (objects) {
     var gameText = (function (_super) {

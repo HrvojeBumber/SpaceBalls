@@ -4,7 +4,11 @@
     __.prototype = b.prototype;
     d.prototype = new __();
 };
-// Explosion Class
+/*FileName: explosion.ts
+Authors: Kevin Donkers and Hrvoje Bumber
+Last Modified by: Kevin Donkers
+Description: This is the explosion object for the small ships
+*/
 var objects;
 (function (objects) {
     var Explosion = (function (_super) {

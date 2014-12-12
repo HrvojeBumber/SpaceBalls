@@ -4,7 +4,11 @@
     __.prototype = b.prototype;
     d.prototype = new __();
 };
-// Boss Bullet Class
+/*FileName: bossbullet.ts
+Authors: Kevin Donkers and Hrvoje Bumber
+Last Modified by: Kevin Donkers
+Description: This is the boss bullet class which handle bullet animation
+*/
 var objects;
 (function (objects) {
     var BossBullet = (function (_super) {

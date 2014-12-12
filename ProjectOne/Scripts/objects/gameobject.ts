@@ -1,4 +1,10 @@
 ﻿/// <reference path="../managers/asset.ts" />
+
+/*FileName: gameobjects.ts
+Authors: Kevin Donkers and Hrvoje Bumber
+Last Modified by: Kevin Donkers
+Description: This is the generic game object 
+*/
 module objects {
     export class GameObject extends createjs.Sprite {
         width: number;

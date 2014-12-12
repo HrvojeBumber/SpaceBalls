@@ -1,4 +1,10 @@
 ﻿/// <reference path="../constants.ts" />
+
+/*FileName: label.ts
+Authors: Kevin Donkers and Hrvoje Bumber
+Last Modified by: Kevin Donkers
+Description: This is a general label object that inherits from createjs.text
+*/
 module objects {
     export class Label extends createjs.Text {
         constructor(x:number,y:number,labelText:string) {

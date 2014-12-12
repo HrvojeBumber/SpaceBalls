@@ -1,4 +1,9 @@
-﻿var managers;
+﻿/*FileName: asset.ts
+Authors: Kevin Donkers and Hrvoje Bumber
+Last Modified by: Kevin Donkers
+Description: This is the asset manager to load all the game assets
+*/
+var managers;
 (function (managers) {
     // Image and Sound Manifest;
     var assetManifest = [

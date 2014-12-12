@@ -1,5 +1,11 @@
 ﻿/// <reference path="../constants.ts" />
 /// <reference path="../managers/asset.ts" />
+
+/*FileName: button.ts
+Authors: Kevin Donkers and Hrvoje Bumber
+Last Modified by: Kevin Donkers
+Description: This is the button object for the menu and game over buttons
+*/
 module objects {
     export class Button extends createjs.Sprite {
         constructor(x:number, y:number, buttonIDString: string) {

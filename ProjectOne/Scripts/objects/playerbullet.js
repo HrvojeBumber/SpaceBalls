@@ -4,6 +4,11 @@
     __.prototype = b.prototype;
     d.prototype = new __();
 };
+/*FileName: playerBullet.ts
+Authors: Kevin Donkers and Hrvoje Bumber
+Last Modified by: Kevin Donkers
+Description: This is the player bullet object that gets created when the player fires
+*/
 // Bullet Class
 var objects;
 (function (objects) {

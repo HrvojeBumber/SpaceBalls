@@ -1,10 +1,15 @@
-﻿var __extends = this.__extends || function (d, b) {
+﻿/// <reference path="../constants.ts" />
+var __extends = this.__extends || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
     function __() { this.constructor = d; }
     __.prototype = b.prototype;
     d.prototype = new __();
 };
-/// <reference path="../constants.ts" />
+/*FileName: label.ts
+Authors: Kevin Donkers and Hrvoje Bumber
+Last Modified by: Kevin Donkers
+Description: This is a general label object that inherits from createjs.text
+*/
 var objects;
 (function (objects) {
     var Label = (function (_super) {

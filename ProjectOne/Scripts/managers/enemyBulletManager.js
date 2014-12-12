@@ -1,5 +1,10 @@
 ﻿/// <reference path="../objects/enemybullet.ts" />
 /// <reference path="../objects/enemy.ts" />
+/*FileName: enemyBulletManager.ts
+Authors: Kevin Donkers and Hrvoje Bumber
+Last Modified by: Kevin Donkers
+Description: This is the bullet manager for the enemy ships
+*/
 var managers;
 (function (managers) {
     var EnemyBulletManager = (function () {
@@ -10,7 +15,7 @@ var managers;
             this.game = game;
         }
         EnemyBulletManager.prototype.fire = function (enemy) {
-            // create two bullets on either side of  plane
+            // create a bullet
             var Bullet = new objects.EnemyBullet(this.game);
 
             this.game.addChild(Bullet);
@@ -40,7 +45,7 @@ var managers;
                 }
             }
 
-            // fire bullet if mouse button is clicked or game container is tapped
+            // fire bullet from random ship every second
             if (frameCount % 60 == 0) {
                 var randomNumber = Math.floor(Math.random() * ships.length);
                 this.fire(ships[randomNumber]);
@@ -73,4 +78,4 @@ var managers;
     })();
     managers.EnemyBulletManager = EnemyBulletManager;
 })(managers || (managers = {}));
-//# sourceMappingURL=enemyBulletManager.js.map
+//# sourceMappingURL=enemybulletmanager.js.map

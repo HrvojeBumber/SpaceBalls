@@ -4,7 +4,11 @@
     __.prototype = b.prototype;
     d.prototype = new __();
 };
-// Boss Class
+/*FileName: bossgun.ts
+Authors: Kevin Donkers and Hrvoje Bumber
+Last Modified by: Kevin Donkers
+Description: This is the boss gun object that handles gun animation
+*/
 var objects;
 (function (objects) {
     var BossGun = (function (_super) {

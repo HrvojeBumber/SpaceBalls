@@ -1,10 +1,15 @@
-﻿var __extends = this.__extends || function (d, b) {
+﻿/// <reference path="../managers/asset.ts" />
+var __extends = this.__extends || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
     function __() { this.constructor = d; }
     __.prototype = b.prototype;
     d.prototype = new __();
 };
-/// <reference path="../managers/asset.ts" />
+/*FileName: player.ts
+Authors: Kevin Donkers and Hrvoje Bumber
+Last Modified by: Kevin Donkers
+Description: This is the player object that controls movement and shooting of the player
+*/
 var objects;
 (function (objects) {
     // Player Class
@@ -98,8 +103,8 @@ var objects;
             this.controlAction();
             this.x += this.dx;
         };
+
         Player.prototype.destroy = function () {
-            //this.engineSound.stop();
             game.removeChild(this);
         };
         return Player;

@@ -1,6 +1,11 @@
 ﻿/// <reference path="../objects/playerbullet.ts" />
 /// <reference path="../objects/player.ts" />
 
+/*FileName: playerBulletManager.ts
+Authors: Kevin Donkers and Hrvoje Bumber
+Last Modified by: Kevin Donkers
+Description: This is the bullet manager that handles the player firing
+*/
 module managers {
     export class BulletManager {
         game: createjs.Container;
@@ -47,7 +52,7 @@ module managers {
                 }
             }
 
-            // fire bullet if space bar is clicked or game container is tapped
+            // fire bullet if space bar is clicked
             if ((this.firing == true) && (this.bulletOnScreen == false)) {
                 if (this.player.onStage == true) {
                     this.fire();

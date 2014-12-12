@@ -1,5 +1,11 @@
 ﻿/// <reference path="../managers/asset.ts" />
 /// <reference path="bossgun.ts" />
+
+/*FileName: boss.ts
+Authors: Kevin Donkers and Hrvoje Bumber
+Last Modified by: Kevin Donkers
+Description: This is the boss object that handles movement and firing of the boss and guns 
+*/
 module objects {
     export class Boss extends objects.BossObject {
         stage: createjs.Stage;

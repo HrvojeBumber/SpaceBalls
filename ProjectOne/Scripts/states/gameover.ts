@@ -5,6 +5,12 @@
 /// <reference path="../objects/space.ts" />
 /// <reference path="../objects/player.ts" />
 /// <reference path="../objects/scoreboard.ts" />
+
+/*FileName: gameover.ts
+Authors: Kevin Donkers and Hrvoje Bumber
+Last Modified by: Hrvoje Bumber
+Description: This is the gameover state that gets switched to whenever the player dies 
+*/
 module states {
     export function gameOverState() {
        

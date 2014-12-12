@@ -1,11 +1,16 @@
-﻿var __extends = this.__extends || function (d, b) {
+﻿/// <reference path="../managers/asset.ts" />
+/// <reference path="bossgun.ts" />
+var __extends = this.__extends || function (d, b) {
     for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p];
     function __() { this.constructor = d; }
     __.prototype = b.prototype;
     d.prototype = new __();
 };
-/// <reference path="../managers/asset.ts" />
-/// <reference path="bossgun.ts" />
+/*FileName: boss.ts
+Authors: Kevin Donkers and Hrvoje Bumber
+Last Modified by: Kevin Donkers
+Description: This is the boss object that handles movement and firing of the boss and guns
+*/
 var objects;
 (function (objects) {
     var Boss = (function (_super) {

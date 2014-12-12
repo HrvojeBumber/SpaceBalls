@@ -1,4 +1,10 @@
 ﻿/// <reference path="../constants.ts" />
+
+/*FileName: gameText.ts
+Authors: Kevin Donkers and Hrvoje Bumber
+Last Modified by: Kevin Donkers
+Description: This is the game text object to create the instruction text 
+*/
 module objects {
     export class gameText extends createjs.Text {
         constructor(x: number, y: number, labelText: string) {
